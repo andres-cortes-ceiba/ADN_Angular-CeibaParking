@@ -1,24 +1,26 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SecurityGuard } from '@core/guard/security.guard';
-import { HomeComponent } from '@home/home.component';
 
 
 const routes: Routes = [
+
   {
     path: '',
-    redirectTo: '/home',
+    redirectTo: 'order',
     pathMatch: 'full'
   },
   {
-    path: 'home',
-    component: HomeComponent,
-    canActivate: [SecurityGuard]
+    path: 'order',
+    loadChildren: () => import('./feature/order/order.module').then(mod => mod.OrderModule)
   },
   {
-    path: 'producto',
-    loadChildren: () => import('@producto/producto.module').then(mod => mod.ProductoModule)
-  }
+    path: 'parking-lot',
+    loadChildren: () => import('./feature/parking-lot/parking-lot.module').then(mod => mod.ParkingLotModule)
+  },
+  {
+    path: 'vehicle',
+    loadChildren: () => import('./feature/vehicle/vehicle.module').then(mod => mod.VehicleModule)
+  },
 
 ];
 
