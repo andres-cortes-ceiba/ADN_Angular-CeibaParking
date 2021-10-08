@@ -1,4 +1,4 @@
-import { Order } from "@core/modelo/order";
+import { Order } from '@core/modelo/order';
 import { of } from 'rxjs';
 import { OrderMock, OrderArrayMock } from './order.mock';
 

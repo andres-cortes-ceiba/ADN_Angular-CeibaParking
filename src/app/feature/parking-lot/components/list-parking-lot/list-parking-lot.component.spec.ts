@@ -40,7 +40,7 @@ describe('ListParkingLotComponent', () => {
     expect(getParkingLotsSpy).toHaveBeenCalled();
     component.parkingLots$.subscribe((parkingLots: ParkingLot[]) => {
       expect(parkingLots).toEqual(ParkingLotArrayMock);
-    })
+    });
 
   });
 

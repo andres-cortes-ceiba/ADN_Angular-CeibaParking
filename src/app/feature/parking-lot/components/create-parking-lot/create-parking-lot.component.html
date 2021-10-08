@@ -18,6 +18,12 @@
                         </option>
                     </select>
                 </div>
+                <div>
+                    <button [disabled]="createParkingLotForm.invalid"
+                        class="btn btn-success">
+                        Create parking lot
+                    </button>
+                </div>
             </form>
         </section>
     </div>

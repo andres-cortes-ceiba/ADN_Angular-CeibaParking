@@ -21,7 +21,7 @@ describe('OrderService', () => {
       ]
     });
     service = TestBed.inject(OrderService);
-    http =TestBed.inject(HttpService)
+    http = TestBed.inject(HttpService);
   });
 
   it('should be created', () => {
@@ -29,9 +29,9 @@ describe('OrderService', () => {
   });
 
   it('should return an Observable<boolean> when post a Order', () => {
-    const spyDoPost = spyOn(http,'doPost').and.returnValue(of(true));
+    const spyDoPost = spyOn(http, 'doPost').and.returnValue(of(true));
 
-    service.createOrder(OrderMock).subscribe((res:boolean) => {
+    service.createOrder(OrderMock).subscribe((res: boolean) => {
       expect(res).toBeTruthy();
     });
 
@@ -40,9 +40,9 @@ describe('OrderService', () => {
   });
 
   it('should return an Observable<Order> when get specific Order', () => {
-    const spyDoGet = spyOn(http,'doGet').and.returnValue(of(OrderMock));
+    const spyDoGet = spyOn(http, 'doGet').and.returnValue(of(OrderMock));
 
-    service.getOrder(1).subscribe((res:Order) => {
+    service.getOrder(1).subscribe((res: Order) => {
       expect(res).toEqual(OrderMock);
     });
 
@@ -51,9 +51,9 @@ describe('OrderService', () => {
   });
 
   it('should return an Observable<Order[]> when get all Orders', () => {
-    const spyDoGet = spyOn(http,'doGet').and.returnValue(of(OrderArrayMock));
+    const spyDoGet = spyOn(http, 'doGet').and.returnValue(of(OrderArrayMock));
 
-    service.getOrders().subscribe((res:Order[]) => {
+    service.getOrders().subscribe((res: Order[]) => {
       expect(res).toEqual(OrderArrayMock);
     });
 

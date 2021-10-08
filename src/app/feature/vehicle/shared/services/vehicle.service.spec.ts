@@ -1,4 +1,4 @@
-import { HttpClientTestingModule } from '@angular/common/http/testing'
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { Vehicle } from '@core/modelo/vehicle';
 import { HttpService } from '@core/services/http.service';
@@ -30,9 +30,9 @@ describe('VehicleService', () => {
   });
 
   it('should return an Observable<boolean> when post a vehicle', () => {
-    const spyDoPost = spyOn(http,'doPost').and.returnValue(of(true));
+    const spyDoPost = spyOn(http, 'doPost').and.returnValue(of(true));
 
-    service.createVehicle(VehicleMock).subscribe((res:boolean) => {
+    service.createVehicle(VehicleMock).subscribe((res: boolean) => {
       expect(res).toBeTruthy();
     });
 
@@ -41,9 +41,9 @@ describe('VehicleService', () => {
   });
 
   it('should return an Observable<Vehicle> when get specific vehicle', () => {
-    const spyDoGet = spyOn(http,'doGet').and.returnValue(of(VehicleMock));
+    const spyDoGet = spyOn(http, 'doGet').and.returnValue(of(VehicleMock));
 
-    service.getVehicle(1).subscribe((res:Vehicle) => {
+    service.getVehicle(1).subscribe((res: Vehicle) => {
       expect(res).toEqual(VehicleMock);
     });
 
@@ -52,9 +52,9 @@ describe('VehicleService', () => {
   });
 
   it('should return an Observable<Vehicle[]> when get all vehicles', () => {
-    const spyDoGet = spyOn(http,'doGet').and.returnValue(of(VehicleArrayMock));
+    const spyDoGet = spyOn(http, 'doGet').and.returnValue(of(VehicleArrayMock));
 
-    service.getVehicles().subscribe((res:Vehicle[]) => {
+    service.getVehicles().subscribe((res: Vehicle[]) => {
       expect(res).toEqual(VehicleArrayMock);
     });
 
@@ -63,9 +63,9 @@ describe('VehicleService', () => {
   });
 
   it('should return an Observable<boolean> when update a vehicle', () => {
-    const spyDoPut = spyOn(http,'doPut').and.returnValue(of(true));
+    const spyDoPut = spyOn(http, 'doPut').and.returnValue(of(true));
 
-    service.updateVehicle(VehicleMock).subscribe((res:boolean) => {
+    service.updateVehicle(VehicleMock).subscribe((res: boolean) => {
       expect(res).toBeTruthy();
     });
 

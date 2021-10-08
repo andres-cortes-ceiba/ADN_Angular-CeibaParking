@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
-import {RouterTestingModule} from "@angular/router/testing";
+import {RouterTestingModule} from '@angular/router/testing';
 import { ParkingLotServiceMock } from 'src/test/utils/mocks/parking-lot/services/parking-lot-service.mock';
 import { ParkingLotService } from '../../shared/services/parking-lot.service';
 
@@ -13,7 +13,7 @@ describe('CreateParkingLotComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ CreateParkingLotComponent ],
-      imports: [ 
+      imports: [
         RouterTestingModule,
         ReactiveFormsModule
       ],

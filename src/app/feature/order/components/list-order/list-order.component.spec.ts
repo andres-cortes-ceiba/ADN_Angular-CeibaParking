@@ -42,7 +42,7 @@ describe('ListOrderComponent', () => {
     expect(getOrdersSpy).toHaveBeenCalled();
     component.orders$.subscribe((orders: Order[]) => {
       expect(orders).toEqual(OrderArrayMock);
-    })
+    });
 
   });
 

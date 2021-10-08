@@ -15,7 +15,7 @@ export class VehicleService {
   }
 
   getVehicle(vehicleId: number) {
-    return this.http.doGet<Vehicle>(environment.endpoint +'/vehicle/' + vehicleId);
+    return this.http.doGet<Vehicle>(environment.endpoint + '/vehicle/' + vehicleId);
   }
 
   getVehicles() {

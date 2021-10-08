@@ -24,7 +24,7 @@
                     </select>
                 </div>
                 <div>
-                    <button
+                    <button [disabled]="createVehicleForm.invalid"
                         (click)="createVehicle()"
                         type="button" 
                         class="btn btn-success">

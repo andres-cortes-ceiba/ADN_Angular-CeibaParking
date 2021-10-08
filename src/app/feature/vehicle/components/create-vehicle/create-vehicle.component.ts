@@ -27,13 +27,13 @@ export class CreateVehicleComponent implements OnInit {
       license_plate: ['', [Validators.required, Validators.maxLength(6)]],
       vehicle_name: ['', Validators.required],
       vehicle_type: ['car', Validators.required],
-    })
+    });
   }
 
   createVehicle(): void {
     this.vehicleService.createVehicle(this.createVehicleForm.value).subscribe(() => {
       this.redirectToList();
-    })
+    });
   }
 
   redirectToList(): void {

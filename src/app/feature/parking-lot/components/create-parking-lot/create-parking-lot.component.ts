@@ -26,13 +26,13 @@ export class CreateParkingLotComponent implements OnInit {
     this.createParkingLotForm = this.formBuilder.group({
       code: ['', Validators.required],
       parking_type: ['car', Validators.required],
-    })
+    });
   }
 
   createParkingLot(): void {
     this.parkingLotService.createParkingLot(this.createParkingLotForm.value).subscribe(() => {
       this.redirectToList();
-    })
+    });
   }
 
   redirectToList(): void {

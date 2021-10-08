@@ -3,7 +3,7 @@ export const VehicleMock = {
     license_plate: 'OQJ17B',
     vehicle_name: 'YBR125',
     vehicle_type: 'motorcycle',
-}
+};
 
 export const VehicleArrayMock = [
     {
@@ -18,4 +18,4 @@ export const VehicleArrayMock = [
         vehicle_name: 'Mazda 3',
         vehicle_type: 'car',
     }
-]
+];

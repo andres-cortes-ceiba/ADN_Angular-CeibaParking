@@ -38,7 +38,7 @@ describe('ListVehicleComponent', () => {
     expect(getVehiclesSpy).toHaveBeenCalled();
     component.vehicles$.subscribe((vehicles: Vehicle[]) => {
       expect(vehicles).toEqual(VehicleArrayMock);
-    })
+    });
 
   });
 

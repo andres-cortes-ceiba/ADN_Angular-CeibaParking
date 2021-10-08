@@ -35,4 +35,17 @@ describe('CreateVehicleComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should create form', () => {
+    expect(component.createVehicleForm.value).toEqual({
+      license_plate: '',
+      vehicle_name: '',
+      vehicle_type: 'car'
+    });
+  });
+
+  it('should return false when form is empty', () => {
+    expect(component.createVehicleForm.valid).toBeFalsy();
+  });
+
 });

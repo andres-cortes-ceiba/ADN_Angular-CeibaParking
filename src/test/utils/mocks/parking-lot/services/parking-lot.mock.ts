@@ -2,7 +2,7 @@ export const ParkingLotMock = {
     id: 1,
     code: 'A22',
     parking_type: 'motorcycle',
-}
+};
 
 export const ParkingLotArrayMock = [
     {
@@ -15,4 +15,4 @@ export const ParkingLotArrayMock = [
         code: 'B12',
         parking_type: 'car',
     }
-]
+];

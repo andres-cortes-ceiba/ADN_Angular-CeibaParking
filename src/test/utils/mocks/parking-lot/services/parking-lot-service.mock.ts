@@ -1,6 +1,6 @@
-import { ParkingLot } from "@core/modelo/parking-lot";
+import { ParkingLot } from '@core/modelo/parking-lot';
 import { of } from 'rxjs';
-import { ParkingLotMock, ParkingLotArrayMock } from "./parking-lot.mock";
+import { ParkingLotMock, ParkingLotArrayMock } from './parking-lot.mock';
 
 export class ParkingLotServiceMock {
 
@@ -13,7 +13,7 @@ export class ParkingLotServiceMock {
     getParkingLot(parkingLotId: number) {
         parkingLotId = 1;
         if (parkingLotId) {
-            return of(ParkingLotMock)
+            return of(ParkingLotMock);
         }
     }
 

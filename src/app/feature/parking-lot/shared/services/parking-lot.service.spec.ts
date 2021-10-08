@@ -30,9 +30,9 @@ describe('ParkingLotService', () => {
   });
 
   it('should return an Observable<boolean> when post a parkingLot', () => {
-    const spyDoPost = spyOn(http,'doPost').and.returnValue(of(true));
+    const spyDoPost = spyOn(http, 'doPost').and.returnValue(of(true));
 
-    service.createParkingLot(ParkingLotMock).subscribe((res:boolean) => {
+    service.createParkingLot(ParkingLotMock).subscribe((res: boolean) => {
       expect(res).toBeTruthy();
     });
 
@@ -41,9 +41,9 @@ describe('ParkingLotService', () => {
   });
 
   it('should return an Observable<ParkinLot> when get specific parkingLot', () => {
-    const spyDoGet = spyOn(http,'doGet').and.returnValue(of(ParkingLotMock));
+    const spyDoGet = spyOn(http, 'doGet').and.returnValue(of(ParkingLotMock));
 
-    service.getParkingLot(1).subscribe((res:ParkingLot) => {
+    service.getParkingLot(1).subscribe((res: ParkingLot) => {
       expect(res).toEqual(ParkingLotMock);
     });
 
@@ -52,9 +52,9 @@ describe('ParkingLotService', () => {
   });
 
   it('should return an Observable<ParkingLot[]> when get all ParkingLots', () => {
-    const spyDoGet = spyOn(http,'doGet').and.returnValue(of(ParkingLotArrayMock));
+    const spyDoGet = spyOn(http, 'doGet').and.returnValue(of(ParkingLotArrayMock));
 
-    service.getParkingLots().subscribe((res:ParkingLot[]) => {
+    service.getParkingLots().subscribe((res: ParkingLot[]) => {
       expect(res).toEqual(ParkingLotArrayMock);
     });
 
@@ -63,9 +63,9 @@ describe('ParkingLotService', () => {
   });
 
   it('should return an Observable<boolean> when update a ParkingLot', () => {
-    const spyDoPut = spyOn(http,'doPut').and.returnValue(of(true));
+    const spyDoPut = spyOn(http, 'doPut').and.returnValue(of(true));
 
-    service.updateParkingLot(ParkingLotMock).subscribe((res:boolean) => {
+    service.updateParkingLot(ParkingLotMock).subscribe((res: boolean) => {
       expect(res).toBeTruthy();
     });
 

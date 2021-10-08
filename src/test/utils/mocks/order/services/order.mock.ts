@@ -14,7 +14,7 @@ export const OrderMock = {
     start: new Date(2021, 10, 5, 8, 15, 0),
     end: new Date(2021, 10, 5, 16, 50, 0),
     price: 8000,
-}
+};
 
 export const OrderArrayMock = [
     {
@@ -51,4 +51,4 @@ export const OrderArrayMock = [
         end: new Date(2021, 10, 2, 13, 25, 0),
         price: 9000,
     }
-]
+];
