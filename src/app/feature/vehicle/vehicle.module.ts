@@ -7,6 +7,7 @@ import { UpdateVehicleComponent } from './components/update-vehicle/update-vehic
 import { ListVehicleComponent } from './components/list-vehicle/list-vehicle.component';
 import { VehicleService } from './shared/services/vehicle.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     VehicleRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
   providers: [
     VehicleService

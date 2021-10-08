@@ -18,5 +18,4 @@ export const VehicleArrayMock = [
         vehicle_name: 'Mazda 3',
         vehicle_type: 'car',
     }
-
 ]
