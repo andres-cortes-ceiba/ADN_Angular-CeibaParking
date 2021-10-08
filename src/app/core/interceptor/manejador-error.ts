@@ -31,7 +31,8 @@ export class ManejadorError implements ErrorHandler {
       mensaje,
     };
     if (!environment.production) {
-      window.console.error('Error inesperado:\n', respuesta);
+      console.log(respuesta)
+      //window.console.error('Error inesperado:\n', respuesta);
     }
   }
 

@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ParkingLotServiceMock } from 'src/test/utils/mocks/parking-lot/services/parking-lot-service.mock';
+import { ParkingLotService } from '../../shared/services/parking-lot.service';
 
 import { ListParkingLotComponent } from './list-parking-lot.component';
 
@@ -8,7 +10,10 @@ describe('ListParkingLotComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListParkingLotComponent ]
+      declarations: [ ListParkingLotComponent ],
+      providers: [
+        { provide: ParkingLotService, useClass: ParkingLotServiceMock}
+      ]
     })
     .compileComponents();
   });

@@ -9,7 +9,6 @@ import { VehicleService } from './shared/services/vehicle.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
-
 @NgModule({
   declarations: [
     CreateVehicleComponent,
