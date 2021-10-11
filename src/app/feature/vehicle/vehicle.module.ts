@@ -8,6 +8,8 @@ import { ListVehicleComponent } from './components/list-vehicle/list-vehicle.com
 import { VehicleService } from './shared/services/vehicle.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { CoreModule } from '@core/core.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     VehicleRoutingModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule,
+    CoreModule
   ],
   providers: [
     VehicleService

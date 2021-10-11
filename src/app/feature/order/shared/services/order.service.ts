@@ -9,16 +9,16 @@ export class OrderService {
     private http: HttpService
   ) { }
 
-  createOrder(order: Order) {
-    return this.http.doPost<Order, boolean>('/parking_lot', order);
+  createOrder(order: any) {
+    return this.http.doPost<Order, boolean>('/order', order);
   }
 
   getOrder(orderId: number) {
-    return this.http.doGet<Order>('/parking_lot/' + orderId);
+    return this.http.doGet<Order>('/order/' + orderId);
   }
 
   getOrders() {
-    return this.http.doGet<Order[]>('/parking_lot/');
+    return this.http.doGet<Order[]>('/order');
   }
 
 }

@@ -7,6 +7,9 @@ import { UpdateParkingLotComponent } from './components/update-parking-lot/updat
 import { ListParkingLotComponent } from './components/list-parking-lot/list-parking-lot.component';
 import { ParkingLotService } from './shared/services/parking-lot.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CoreModule } from '@core/core.module';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -18,6 +21,9 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     ParkingLotRoutingModule,
+    CoreModule,
+    RouterModule,
+    HttpClientModule,
     ReactiveFormsModule
   ],
   providers: [

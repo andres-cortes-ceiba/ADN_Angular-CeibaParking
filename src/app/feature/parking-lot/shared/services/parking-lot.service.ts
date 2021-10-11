@@ -18,7 +18,7 @@ export class ParkingLotService {
   }
 
   getParkingLots() {
-    return this.http.doGet<ParkingLot[]>('/parking_lot/');
+    return this.http.doGet<ParkingLot[]>('/parking_lot');
   }
 
   updateParkingLot(parkingLot: ParkingLot) {

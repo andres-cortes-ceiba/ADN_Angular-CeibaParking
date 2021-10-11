@@ -1,28 +1,28 @@
 import { Injectable } from '@angular/core';
 import { Vehicle } from '@core/modelo/vehicle';
 import { HttpService } from '@core/services/http.service';
-import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class VehicleService {
 
+
   constructor(
-    private http: HttpService,
+    private http: HttpService
   ) { }
 
   createVehicle(vehicle: any) {
-    return this.http.doPost<Vehicle, boolean>(environment.endpoint + '/vehicle', vehicle);
+    return this.http.doPost<Vehicle, boolean>('/vehicle', vehicle);
   }
 
   getVehicle(vehicleId: number) {
-    return this.http.doGet<Vehicle>(environment.endpoint + '/vehicle/' + vehicleId);
+    return this.http.doGet<Vehicle>('/vehicle/' + vehicleId);
   }
 
   getVehicles() {
-    return this.http.doGet<Vehicle[]>(environment.endpoint + '/vehicle');
+    return this.http.doGet<Vehicle[]>('/vehicle');
   }
 
-  updateVehicle(vehicle: Vehicle) {
+  updateVehicle(vehicle: any) {
     return this.http.doPut<Vehicle, boolean>('/vehicle' + vehicle.id, vehicle);
   }
 
