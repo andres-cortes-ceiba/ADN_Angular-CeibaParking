@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { Vehicle } from '@core/modelo/vehicle';
 import { VehicleServiceMock } from 'src/test/utils/mocks/vehicle/services/vehicle-service.mock';
 import { VehicleArrayMock } from 'src/test/utils/mocks/vehicle/services/vehicle.mock';
@@ -14,6 +15,7 @@ describe('ListVehicleComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ ListVehicleComponent ],
+      imports: [ RouterTestingModule ],
       providers: [ {provide: VehicleService, useClass: VehicleServiceMock}]
     })
     .compileComponents();

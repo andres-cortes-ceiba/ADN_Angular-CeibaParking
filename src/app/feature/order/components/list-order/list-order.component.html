@@ -25,6 +25,9 @@
                 <th class="col">
                     Price
                 </th>
+                <th class="col">
+                    Actions
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -39,13 +42,20 @@
                     {{ order.vehicle.license_plate }}
                 </th>
                 <th>
-                    {{ order.start }}
+                    {{ order.start | date: 'medium' }}
                 </th>
                 <th>
-                    {{ order.end }}
+                    {{ order.end | date: 'medium' }}
                 </th>
                 <th>
                     {{ order.price }}
+                </th>
+                <th>
+                    <button [disabled]="order.end"
+                        (click)="endService(order)"
+                        class="btn btn-primary">
+                        End service
+                    </button>
                 </th>
             </tr>
         </tbody>

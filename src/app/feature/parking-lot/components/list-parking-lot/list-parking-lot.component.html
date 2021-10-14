@@ -16,6 +16,12 @@
                 <th class="col">
                     Parking type
                 </th>
+                <th class="col">
+                    Available
+                </th>
+                <th class="col">
+                    Actions
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -28,6 +34,17 @@
                 </th>
                 <th>
                     {{ parkingLot.parking_type }}
+                </th>
+                <th>
+                    {{ parkingLot.available }}
+                </th>
+                <th>
+                    <button [routerLink]="['/parking-lot/update-parking-lot',parkingLot.id]"
+                        [disabled]="!parkingLot.available"
+                        id="editButton"
+                        class="btn btn-primary">
+                        Edit
+                    </button>
                 </th>
             </tr>
         </tbody>

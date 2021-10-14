@@ -19,6 +19,12 @@
                 <th class="col">
                     Vehicle type
                 </th>
+                <th class="col">
+                    Parked
+                </th>
+                <th class="col">
+                    Actions
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -34,6 +40,17 @@
                 </th>
                 <th>
                     {{ vehicle.vehicle_type }}
+                </th>
+                <th>
+                    {{ vehicle.parked }}
+                </th>
+                <th>
+                    <button [routerLink]="['/vehicle/update-vehicle',vehicle.id]"
+                        [disabled]="vehicle.parked"
+                        id="editButton"
+                        class="btn btn-primary">
+                        Edit
+                    </button>
                 </th>
             </tr>
         </tbody>

@@ -24,4 +24,12 @@ export class ListOrderComponent implements OnInit {
     this.orders$ = this.orderService.getOrders();
   }
 
+  endService(order: Order) {
+    this.orderService.endOrder(order).subscribe(() => {
+      this.orderService.clearStatus(order);
+      this.orderService.setPrice(order);
+      this.getOrders();
+    });
+  }
+
 }

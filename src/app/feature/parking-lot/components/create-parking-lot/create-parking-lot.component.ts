@@ -26,6 +26,8 @@ export class CreateParkingLotComponent implements OnInit {
     this.createParkingLotForm = this.formBuilder.group({
       code: ['', Validators.required],
       parking_type: ['car', Validators.required],
+      vehicle: null,
+      available: true
     });
   }
 

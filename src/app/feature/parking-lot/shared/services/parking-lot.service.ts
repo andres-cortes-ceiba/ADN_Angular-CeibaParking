@@ -22,7 +22,7 @@ export class ParkingLotService {
   }
 
   updateParkingLot(parkingLot: ParkingLot) {
-    return this.http.doPut<ParkingLot, boolean>('/parking_lot' + parkingLot.id, parkingLot);
+    return this.http.doPut<ParkingLot, boolean>('/parking_lot/' + parkingLot.id, parkingLot);
   }
 
 }

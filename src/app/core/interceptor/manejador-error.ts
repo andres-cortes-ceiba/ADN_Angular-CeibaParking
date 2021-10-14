@@ -36,7 +36,7 @@ export class ManejadorError implements ErrorHandler {
   }
 
   public obtenerErrorHttpCode(httpCode: number): string {
-    if (HTTP_ERRORES_CODIGO.hasOwnProperty(httpCode)) {
+    if (!HTTP_ERRORES_CODIGO.hasOwnProperty(httpCode)) {
       return HTTP_ERRORES_CODIGO.PETICION_FALLIDA;
     }
     return HTTP_ERRORES_CODIGO[httpCode];

@@ -1,1 +1,30 @@
-<p>create-order works!</p>
+<div class="card">
+    <div class="card-body">
+        <section>
+            <form [formGroup]="createOrderForm">
+                <div class="form-group">
+                    <label for="parking_lot">Parking lot</label>
+                    <select formControlName="parking_lot" class="form-select" id="parking_lot">
+                        <option *ngFor="let parking_lot of parkingLotsData$ | async" [ngValue]="parking_lot">
+                            {{ parking_lot.code }}
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="vehicle">Vehicle</label>
+                    <select formControlName="vehicle" class="form-select" id="vehicle">
+                        <option *ngFor="let vehicle of vehiclesData$ | async" [ngValue]="vehicle">
+                            {{ vehicle.license_plate }}
+                        </option>
+                    </select>
+                </div>
+                <button [disabled]="createOrderForm.invalid"
+                    (click)="createOrder()"
+                    type="button"
+                    class="btn btn-success">
+                Create order
+                </button>
+            </form>
+        </section>
+    </div>
+</div>

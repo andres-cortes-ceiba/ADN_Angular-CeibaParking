@@ -3,12 +3,75 @@
     {
       "id": 1,
       "code": "A22",
-      "parking_type": "motorcycle"
+      "parking_type": "motorcycle",
+      "vehicle": {
+        "id": 1,
+        "license_plate": "OQJ17B",
+        "vehicle_name": "YBR125",
+        "vehicle_type": "motorcycle",
+        "parked": true
+      },
+      "available": false
     },
     {
       "id": 2,
       "code": "B12",
-      "parking_type": "car"
+      "parking_type": "car",
+      "vehicle": {
+        "id": 2,
+        "license_plate": "MVT745",
+        "vehicle_name": "Mazda 3",
+        "vehicle_type": "car",
+        "parked": true
+      },
+      "available": false
+    },
+    {
+      "id": 3,
+      "code": "A34",
+      "parking_type": "car",
+      "vehicle": null,
+      "available": false
+    },
+    {
+      "code": "A34",
+      "parking_type": "car",
+      "vehicle": null,
+      "available": false,
+      "id": 4
+    },
+    {
+      "id": 5,
+      "code": "A34",
+      "parking_type": "motorcycle",
+      "vehicle": null,
+      "available": false
+    },
+    {
+      "id": 6,
+      "code": "A34",
+      "parking_type": "motorcycle",
+      "vehicle": {
+        "license_plate": "AGF345",
+        "vehicle_name": "name",
+        "vehicle_type": "motorcycle",
+        "parked": false,
+        "id": 6
+      },
+      "available": false
+    },
+    {
+      "code": "A34",
+      "parking_type": "car",
+      "vehicle": {
+        "license_plate": "AGF345",
+        "vehicle_name": "name",
+        "vehicle_type": "motorcycle",
+        "parked": false,
+        "id": 7
+      },
+      "available": true,
+      "id": 7
     }
   ],
   "vehicle": [
@@ -16,19 +79,50 @@
       "id": 1,
       "license_plate": "OQJ17B",
       "vehicle_name": "YBR125",
-      "vehicle_type": "motorcycle"
+      "vehicle_type": "motorcycle",
+      "parked": true
     },
     {
       "id": 2,
       "license_plate": "MVT745",
       "vehicle_name": "Mazda 3",
-      "vehicle_type": "car"
+      "vehicle_type": "car",
+      "parked": true
     },
     {
-      "license_plate": "AB33DC",
+      "id": 3,
+      "license_plate": "AGF345",
       "vehicle_name": "name",
       "vehicle_type": "car",
-      "id": 3
+      "parked": true
+    },
+    {
+      "license_plate": "AGF345",
+      "vehicle_name": "name",
+      "vehicle_type": "car",
+      "parked": true,
+      "id": 4
+    },
+    {
+      "license_plate": "AGF345",
+      "vehicle_name": "name",
+      "vehicle_type": "motorcycle",
+      "parked": true,
+      "id": 5
+    },
+    {
+      "license_plate": "AGF345",
+      "vehicle_name": "name",
+      "vehicle_type": "motorcycle",
+      "parked": true,
+      "id": 6
+    },
+    {
+      "license_plate": "AGF345",
+      "vehicle_name": "name",
+      "vehicle_type": "motorcycle",
+      "parked": false,
+      "id": 7
     }
   ],
   "order": [
@@ -37,13 +131,22 @@
       "parking_lot": {
         "id": 1,
         "code": "A22",
-        "parking_type": "motorcycle"
+        "parking_type": "motorcycle",
+        "vehicle": {
+          "id": 1,
+          "license_plate": "OQJ17B",
+          "vehicle_name": "YBR125",
+          "vehicle_type": "motorcycle",
+          "parked": true
+        },
+        "available": false
       },
       "vehicle": {
         "id": 1,
         "license_plate": "OQJ17B",
         "vehicle_name": "YBR125",
-        "vehicle_type": "motorcycle"
+        "vehicle_type": "motorcycle",
+        "parked": true
       },
       "start": "2021-10-5",
       "end": "2021-10-5",
@@ -54,17 +157,52 @@
       "parking_lot": {
         "id": 2,
         "code": "B12",
-        "parking_type": "car"
+        "parking_type": "car",
+        "vehicle": {
+          "id": 2,
+          "license_plate": "MVT745",
+          "vehicle_name": "Mazda 3",
+          "vehicle_type": "car",
+          "parked": true
+        },
+        "available": false
       },
       "vehicle": {
         "id": 2,
         "license_plate": "MVT745",
         "vehicle_name": "Mazda 3",
-        "vehicle_type": "car"
+        "vehicle_type": "car",
+        "parked": true
       },
       "start": "2021-10-5",
       "end": "2021-10-5",
       "price": 9000
+    },
+    {
+      "parking_lot": {
+        "code": "A34",
+        "parking_type": "car",
+        "vehicle": {
+          "license_plate": "AGF345",
+          "vehicle_name": "name",
+          "vehicle_type": "motorcycle",
+          "parked": false,
+          "id": 7
+        },
+        "available": true,
+        "id": 7
+      },
+      "vehicle": {
+        "license_plate": "AGF345",
+        "vehicle_name": "name",
+        "vehicle_type": "motorcycle",
+        "parked": false,
+        "id": 7
+      },
+      "start": "2021-10-14T15:47:12.420Z",
+      "end": "2021-10-14T15:47:50.434Z",
+      "price": "",
+      "id": 3
     }
   ]
 }

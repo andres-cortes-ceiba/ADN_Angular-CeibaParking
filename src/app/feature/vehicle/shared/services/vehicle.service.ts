@@ -10,7 +10,7 @@ export class VehicleService {
     private http: HttpService
   ) { }
 
-  createVehicle(vehicle: any) {
+  createVehicle(vehicle: Vehicle) {
     return this.http.doPost<Vehicle, boolean>('/vehicle', vehicle);
   }
 
@@ -23,7 +23,7 @@ export class VehicleService {
   }
 
   updateVehicle(vehicle: any) {
-    return this.http.doPut<Vehicle, boolean>('/vehicle' + vehicle.id, vehicle);
+    return this.http.doPut<Vehicle, boolean>('/vehicle/' + vehicle.id, vehicle);
   }
 
 }

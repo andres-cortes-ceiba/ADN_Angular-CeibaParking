@@ -10,11 +10,8 @@ export class VehicleServiceMock {
         }
     }
 
-    getVehicle(vehicleId: number) {
-        vehicleId = 1;
-        if (vehicleId) {
-            return of(VehicleMock);
-        }
+    getVehicle(_: number) {
+        return of(VehicleMock);
     }
 
     getVehicles() {

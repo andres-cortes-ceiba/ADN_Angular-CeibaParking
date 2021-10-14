@@ -21,6 +21,11 @@ const routes: Routes = [
     path: 'vehicle',
     loadChildren: () => import('./feature/vehicle/vehicle.module').then(mod => mod.VehicleModule)
   },
+  {
+    path: '**',
+    redirectTo: 'order',
+    pathMatch: 'full'
+  }
 
 ];
 

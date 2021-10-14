@@ -20,7 +20,7 @@ const routes: Routes = [
     component: CreateVehicleComponent,
   },
   {
-    path: 'update-vehicle',
+    path: 'update-vehicle/:id',
     component: UpdateVehicleComponent,
   }
 

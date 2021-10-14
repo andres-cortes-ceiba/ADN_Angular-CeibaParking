@@ -1,1 +1,37 @@
-<p>update-vehicle works!</p>
+<div class="card">
+    <div class="card-body">
+        <section>
+            <form [formGroup]="updateVehicleForm">
+                <div class="form-group">
+                    <label for="license_plate">license plate</label>
+                    <input formControlName="license_plate" type="text" class="form-control" id="license_plate"
+                        aria-describedby="license_plate" placeholder="Enter license plate">
+                </div>
+                <div class="form-group">
+                    <label for="vehicle_name">Vehicle name</label>
+                    <input formControlName="vehicle_name" type="text" class="form-control" id="vehicle_name"
+                        aria-describedby="vehicle_name" placeholder="Enter license plate">
+                </div>
+                <div class="form-group">
+                    <label for="vehicleType">Vehicle type</label>
+                    <select formControlName="vehicle_type" class="form-select" id="vehicleType">
+                        <option value="car">
+                            car
+                        </option>
+                        <option value="motorcycle">
+                            motorcycle
+                        </option>
+                    </select>
+                </div>
+                <div>
+                    <button [disabled]="updateVehicleForm.invalid"
+                        (click)="updateVehicle()"
+                        type="button" 
+                        class="btn btn-success">
+                        Update Vehicle
+                    </button>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>

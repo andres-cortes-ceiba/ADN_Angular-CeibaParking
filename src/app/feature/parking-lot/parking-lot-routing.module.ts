@@ -20,7 +20,7 @@ const routes: Routes = [
     component: CreateParkingLotComponent,
   },
   {
-    path: 'update-parking-lot',
+    path: 'update-parking-lot/:id',
     component: UpdateParkingLotComponent,
   }
 

@@ -6,10 +6,9 @@ import { CreateVehicleComponent } from './components/create-vehicle/create-vehic
 import { UpdateVehicleComponent } from './components/update-vehicle/update-vehicle.component';
 import { ListVehicleComponent } from './components/list-vehicle/list-vehicle.component';
 import { VehicleService } from './shared/services/vehicle.service';
-import { ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
 import { CoreModule } from '@core/core.module';
-import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from '@shared/shared.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -20,10 +19,9 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     CommonModule,
     VehicleRoutingModule,
-    ReactiveFormsModule,
     RouterModule,
-    HttpClientModule,
-    CoreModule
+    CoreModule,
+    SharedModule
   ],
   providers: [
     VehicleService

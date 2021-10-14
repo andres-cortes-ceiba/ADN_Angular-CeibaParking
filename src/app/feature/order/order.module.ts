@@ -6,9 +6,10 @@ import { CreateOrderComponent } from './components/create-order/create-order.com
 import { ListOrderComponent } from './components/list-order/list-order.component';
 import { OrderService } from './shared/services/order.service';
 import { CoreModule } from '@core/core.module';
+import { SharedModule } from '@shared/shared.module';
+import { VehicleService } from '@shared/services/vehicle.service';
+import { ParkingLotService } from '@shared/services/parking-lot.service';
 import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -19,13 +20,14 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     CommonModule,
     OrderRoutingModule,
-    CoreModule,
     RouterModule,
-    HttpClientModule,
-    ReactiveFormsModule
+    CoreModule,
+    SharedModule
   ],
   providers: [
-    OrderService
+    OrderService,
+    VehicleService,
+    ParkingLotService
   ]
 })
 export class OrderModule { }

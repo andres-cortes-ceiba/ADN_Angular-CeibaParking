@@ -1,1 +1,31 @@
-<p>update-parking-lot works!</p>
+<div class="card">
+    <div class="card-body">
+        <section>
+            <form [formGroup]="updateParkingLotForm">
+                <div class="form-group">
+                    <label for="code">Code</label>
+                    <input formControlName="code" type="text" class="form-control" id="code" aria-describedby="code"
+                        placeholder="Enter code">
+                </div>
+                <div class="form-group">
+                    <label for="parkingType">Parking Type</label>
+                    <select class="form-select" id="parkingType" formControlName="parking_type">
+                        <option value="car">
+                            car
+                        </option>
+                        <option value="motorcycle">
+                            motorcycle
+                        </option>
+                    </select>
+                </div>
+                <div>
+                    <button [disabled]="updateParkingLotForm.invalid"
+                        (click)="updateParkingLot()"
+                        class="btn btn-success">
+                        Update parking lot
+                    </button>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>

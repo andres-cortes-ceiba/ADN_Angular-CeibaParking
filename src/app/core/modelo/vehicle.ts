@@ -3,4 +3,5 @@ export interface Vehicle {
     license_plate: string;
     vehicle_name: string;
     vehicle_type: string;
+    parked: boolean;
 }
