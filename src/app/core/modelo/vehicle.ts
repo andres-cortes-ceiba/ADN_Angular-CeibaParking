@@ -1,5 +1,5 @@
 export interface Vehicle {
-    id: number;
+    id?: number;
     license_plate: string;
     vehicle_name: string;
     vehicle_type: string;

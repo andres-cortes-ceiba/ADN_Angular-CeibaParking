@@ -18,6 +18,7 @@ export class CreateOrderComponent implements OnInit {
   createOrderForm: FormGroup;
   vehiclesData$: Observable<Vehicle[]>;
   parkingLotsData$: Observable<ParkingLot[]>;
+  vehicleType = '';
 
   constructor(
     private readonly router: Router,

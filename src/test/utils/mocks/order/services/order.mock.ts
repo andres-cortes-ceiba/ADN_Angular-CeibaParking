@@ -79,3 +79,165 @@ export const OrderArrayMock = [
         price: 9000,
     }
 ];
+
+export const carOrderOnWeekendMock = {
+    id: 3,
+    parking_lot: {
+      code: 'A34',
+      parking_type: 'car',
+      vehicle: {
+        license_plate: 'AGF345',
+        vehicle_name: 'name',
+        vehicle_type: 'car',
+        parked: true,
+        id: 7
+      },
+      available: false,
+      id: 7
+    },
+    vehicle: {
+      license_plate: 'AGF345',
+      vehicle_name: 'name',
+      vehicle_type: 'car',
+      parked: true,
+      id: 7
+    },
+    start: new Date('2021-10-17T11:47:12.420Z'),
+    end: new Date('2021-10-17T14:23:12.420Z'),
+    price: null,
+};
+
+export const motorcycleOrderOnWeekendMock = {
+    id: 3,
+    parking_lot: {
+      code: 'A34',
+      parking_type: 'motorcycle',
+      vehicle: {
+        license_plate: 'AGF345',
+        vehicle_name: 'name',
+        vehicle_type: 'motorcycle',
+        parked: true,
+        id: 7
+      },
+      available: false,
+      id: 7
+    },
+    vehicle: {
+      license_plate: 'AGF345',
+      vehicle_name: 'name',
+      vehicle_type: 'motorcycle',
+      parked: true,
+      id: 7
+    },
+    start: new Date('2021-10-17T11:47:12.420Z'),
+    end: new Date('2021-10-17T14:23:12.420Z'),
+    price: null,
+};
+
+export const carOrderOnWeekMock = {
+    id: 3,
+    parking_lot: {
+      code: 'A34',
+      parking_type: 'car',
+      vehicle: {
+        license_plate: 'AGF345',
+        vehicle_name: 'name',
+        vehicle_type: 'car',
+        parked: true,
+        id: 7
+      },
+      available: false,
+      id: 7
+    },
+    vehicle: {
+      license_plate: 'AGF345',
+      vehicle_name: 'name',
+      vehicle_type: 'car',
+      parked: true,
+      id: 7
+    },
+    start: new Date('2021-10-15T11:47:12.420Z'),
+    end: new Date('2021-10-15T14:23:12.420Z'),
+    price: null,
+};
+
+export const motorcycleOrderOnWeekMock = {
+    id: 3,
+    parking_lot: {
+      code: 'A34',
+      parking_type: 'motorcycle',
+      vehicle: {
+        license_plate: 'AGF345',
+        vehicle_name: 'name',
+        vehicle_type: 'motorcycle',
+        parked: true,
+        id: 7
+      },
+      available: false,
+      id: 7
+    },
+    vehicle: {
+      license_plate: 'AGF345',
+      vehicle_name: 'name',
+      vehicle_type: 'motorcycle',
+      parked: true,
+      id: 7
+    },
+    start: new Date('2021-10-15T11:47:12.420Z'),
+    end: new Date('2021-10-15T14:23:12.420Z'),
+    price: null,
+};
+
+export const carOrderDayOnWeekMock = {
+    id: 3,
+    parking_lot: {
+      code: 'A34',
+      parking_type: 'car',
+      vehicle: {
+        license_plate: 'AGF345',
+        vehicle_name: 'name',
+        vehicle_type: 'car',
+        parked: true,
+        id: 7
+      },
+      available: false,
+      id: 7
+    },
+    vehicle: {
+      license_plate: 'AGF345',
+      vehicle_name: 'name',
+      vehicle_type: 'car',
+      parked: true,
+      id: 7
+    },
+    start: new Date('2021-10-15T11:47:12.420Z'),
+    end: new Date('2021-10-15T20:23:12.420Z'),
+    price: null,
+};
+
+export const motorcycleDayOrderOnWeekMock = {
+    id: 3,
+    parking_lot: {
+      code: 'A34',
+      parking_type: 'motorcycle',
+      vehicle: {
+        license_plate: 'AGF345',
+        vehicle_name: 'name',
+        vehicle_type: 'motorcycle',
+        parked: true,
+        id: 7
+      },
+      available: false,
+      id: 7
+    },
+    vehicle: {
+      license_plate: 'AGF345',
+      vehicle_name: 'name',
+      vehicle_type: 'motorcycle',
+      parked: true,
+      id: 7
+    },
+    start: new Date('2021-10-15T11:47:12.420Z'),
+    end: new Date('2021-10-15T20:23:12.420Z'),
+    price: null,
+};

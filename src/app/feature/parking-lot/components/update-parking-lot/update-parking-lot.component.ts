@@ -31,7 +31,6 @@ export class UpdateParkingLotComponent implements OnInit {
       id: [null, [Validators.required]],
       code: ['', Validators.required],
       parking_type: ['car', Validators.required],
-      vehicle: [null],
       available: [false, [Validators.required]]
     });
   }

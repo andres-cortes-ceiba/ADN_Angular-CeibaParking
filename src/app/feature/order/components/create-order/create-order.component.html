@@ -3,9 +3,26 @@
         <section>
             <form [formGroup]="createOrderForm">
                 <div class="form-group">
+                    <label for="vehicle_type">Vehicle type</label>
+                    <select  [(ngModel)]="vehicleType"
+                        [ngModelOptions]="{standalone: true}"
+                        class="form-select"
+                        id="vehicle_type">
+                        <option value="" selected>
+                            Select
+                        </option>
+                        <option value="car">
+                            car
+                        </option>
+                        <option value="motorcycle">
+                            motorcycle
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group">
                     <label for="parking_lot">Parking lot</label>
                     <select formControlName="parking_lot" class="form-select" id="parking_lot">
-                        <option *ngFor="let parking_lot of parkingLotsData$ | async" [ngValue]="parking_lot">
+                        <option *ngFor="let parking_lot of parkingLotsData$ | async | filterParkingLotByType: vehicleType" [ngValue]="parking_lot">
                             {{ parking_lot.code }}
                         </option>
                     </select>
@@ -13,7 +30,7 @@
                 <div class="form-group">
                     <label for="vehicle">Vehicle</label>
                     <select formControlName="vehicle" class="form-select" id="vehicle">
-                        <option *ngFor="let vehicle of vehiclesData$ | async" [ngValue]="vehicle">
+                        <option *ngFor="let vehicle of vehiclesData$ | async | filterVehicleByType: vehicleType" [ngValue]="vehicle">
                             {{ vehicle.license_plate }}
                         </option>
                     </select>

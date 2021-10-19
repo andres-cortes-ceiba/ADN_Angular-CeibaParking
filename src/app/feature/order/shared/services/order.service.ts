@@ -10,14 +10,14 @@ export class OrderService {
     private http: HttpService,
   ) { }
 
-  createOrder(order: any) {
+  createOrder(order: Order) {
     order.start = new Date();
+    this.setStatus(order);
     return this.http.doPost<Order, boolean>('/order', order);
   }
 
   calcPrice(order: Order) {
     const hours = Math.ceil((order.end.getTime() - order.start.getTime()) / 3600000);
-    console.log(hours);
     if (order.start.getDay() === 0 || order.start.getDay() === 6) {
       if (order.vehicle.vehicle_type === 'car') {
         return hours * environment.weekendCarHourPrice;
@@ -25,6 +25,7 @@ export class OrderService {
         return hours * environment.weekendMotorcycleHourPrice;
       }
     } else {
+      console.log(hours);
       if (hours >= 8) {
         if (order.vehicle.vehicle_type === 'car') {
           return environment.dayCarPrice;
@@ -41,23 +42,14 @@ export class OrderService {
     }
   }
 
-  setStart(order: Order) {
-    return this.http.doPatch<{start: Date}, boolean>(
-      '/order/' + order.id,
-      {
-        start: new Date()
-      }
-    );
-  }
-
   setStatus(order: Order) {
-    this.http.doPatch('/vehicle/' + order.vehicle.id, { parked: false }).toPromise();
-    this.http.doPatch('/parking_lot/' + order.parking_lot.id, { available: true, vehicle: order.vehicle }).toPromise();
+    this.http.doPatch('/vehicle/' + order.vehicle.id, { parked: true }).toPromise();
+    this.http.doPatch('/parking_lot/' + order.parking_lot.id, { available: false }).toPromise();
   }
 
-  async clearStatus(order: Order) {
-    await this.http.doPatch('/vehicle/' + order.vehicle.id, { parked: false }).toPromise();
-    await this.http.doPatch('/parking_lot/' + order.parking_lot.id, { available: true, vehicle: null }).toPromise();
+  clearStatus(order: Order) {
+    this.http.doPatch('/vehicle/' + order.vehicle.id, { parked: false }).toPromise();
+    this.http.doPatch('/parking_lot/' + order.parking_lot.id, { available: true }).toPromise();
   }
 
   setPrice(order: Order) {
