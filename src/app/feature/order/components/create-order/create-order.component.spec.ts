@@ -1,8 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ParkingLot } from '@core/modelo/parking-lot';
 import { Vehicle } from '@core/modelo/vehicle';
+import { FilterParkingLotByTypePipe } from '@shared/pipe/filter-parking-lot-by-type/filter-parking-lot-by-type.pipe';
+import { FilterVehicleByTypePipe } from '@shared/pipe/filter-vehicle-by-type/filter-vehicle-by-type.pipe';
 import { ParkingLotService } from '@shared/services/parking-lot.service';
 import { VehicleService } from '@shared/services/vehicle.service';
 import { OrderServiceMock } from 'src/test/utils/mocks/order/services/order-service.mock';
@@ -24,11 +26,16 @@ describe('CreateOrderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CreateOrderComponent ],
+      declarations: [
+        CreateOrderComponent,
+        FilterParkingLotByTypePipe,
+        FilterVehicleByTypePipe
+       ],
       imports: [
         OrderRoutingModule,
         RouterTestingModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        FormsModule
       ],
       providers : [
         { provide: OrderService, useClass: OrderServiceMock },
@@ -106,7 +113,6 @@ describe('CreateOrderComponent', () => {
   it('should return true when form is valid', () => {
 
     component.createOrderForm.patchValue(OrderMock);
-    component.createOrderForm.patchValue({start: new Date()});
     expect(component.createOrderForm.valid).toBeTruthy();
 
   });
@@ -116,6 +122,7 @@ describe('CreateOrderComponent', () => {
     const spyCreate = spyOn(orderService, 'createOrder').and.callThrough();
     const spyRedirect = spyOn(component, 'redirectToList').and.callThrough();
 
+    component.createOrderForm.patchValue(OrderMock);
     component.createOrder();
 
     expect(spyCreate).toHaveBeenCalled();

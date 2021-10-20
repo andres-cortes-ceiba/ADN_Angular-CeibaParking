@@ -3,24 +3,38 @@
         <section>
             <form [formGroup]="updateParkingLotForm">
                 <div class="form-group">
-                    <label for="code">Code</label>
-                    <input formControlName="code" type="text" class="form-control" id="code" aria-describedby="code"
+                    <label for="update-parking-lot__code">Code</label>
+                    <input formControlName="code" type="text" class="form-control" id="update-parking-lot__code" aria-describedby="code"
                         placeholder="Enter code">
+                    <div 
+                        *ngIf="updateParkingLotForm.get('code').errors?.required"
+                        class="error-message"
+                        id="update-parking-lot__error-code-required">
+                        * Code is required
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="parkingType">Parking Type</label>
-                    <select class="form-select" id="parkingType" formControlName="parking_type">
-                        <option value="car">
-                            car
-                        </option>
-                        <option value="motorcycle">
-                            motorcycle
+                    <label for="update-parking-lot__parking-type">Parking Type</label>
+                    <select class="form-select" id="update-parking-lot__parking-type" formControlName="parking_type">
+                        <option value="" selected>Select</option>
+                        <option 
+                            [id]="'update-parking-lot__parking-type-option--' + option"
+                            *ngFor="let option of parkingLotTypeOptions" 
+                            [ngValue]="option">
+                            {{option}}
                         </option>
                     </select>
+                    <div
+                        *ngIf="updateParkingLotForm.get('parking_type').errors?.required"
+                        class="error-message"
+                        id="update-parking-lot__error-parking-type-required">
+                        * Parking type is required
+                    </div>
                 </div>
                 <div>
                     <button [disabled]="updateParkingLotForm.invalid"
                         (click)="updateParkingLot()"
+                        id="update-parking-lot__btn-update"
                         class="btn btn-success">
                         Update parking lot
                     </button>

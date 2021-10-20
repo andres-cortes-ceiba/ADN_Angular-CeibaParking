@@ -1,52 +1,12 @@
-<section class="list-parking-lot__button-container">
+<section class="list-parking-lot__button-container d-flex justify-content-end my-3">
     <button routerLink="/parking-lot/create-parking-lot" class="btn btn-success">
         Add parking lot
     </button>
 </section>
-<section class="list-parking-lot__table">
-    <table class="table table-dark">
-        <thead>
-            <tr>
-                <th class="col">
-                    ID
-                </th>
-                <th class="col">
-                    Code
-                </th>
-                <th class="col">
-                    Parking type
-                </th>
-                <th class="col">
-                    Available
-                </th>
-                <th class="col">
-                    Actions
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let parkingLot of parkingLots$ | async">
-                <th>
-                    {{ parkingLot.id }}
-                </th>
-                <th>
-                    {{ parkingLot.code }}
-                </th>
-                <th>
-                    {{ parkingLot.parking_type }}
-                </th>
-                <th>
-                    {{ parkingLot.available }}
-                </th>
-                <th>
-                    <button [routerLink]="['/parking-lot/update-parking-lot',parkingLot.id]"
-                        [disabled]="!parkingLot.available"
-                        id="editButton"
-                        class="btn btn-primary">
-                        Edit
-                    </button>
-                </th>
-            </tr>
-        </tbody>
-    </table>
-</section>
+<app-generic-table
+    [data]="parkingLots$"
+    [labels]="labels"
+    [fields]="fields"
+    [action]="action"
+    (selectedItem)="goToEditParkingLot($event)"
+></app-generic-table>

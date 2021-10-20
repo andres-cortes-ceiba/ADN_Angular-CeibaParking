@@ -15,4 +15,8 @@ export class VehicleService {
     return this.http.doGet<Vehicle[]>('/vehicle?parked=false');
   }
 
+  editVehicle(vehicle: Vehicle) {
+    return this.http.doPut<Vehicle, boolean>('/vehicle/' + vehicle.id, vehicle);
+  }
+
 }

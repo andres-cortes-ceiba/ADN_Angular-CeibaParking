@@ -11,13 +11,18 @@ import { VehicleService } from '../../shared/services/vehicle.service';
 })
 export class UpdateVehicleComponent implements OnInit {
 
+  vehicleTypeOptions = [
+    'car',
+    'motorcycle'
+  ];
+
   updateVehicleForm: FormGroup;
 
   constructor(
     private readonly router: Router,
     private readonly activatedRoute: ActivatedRoute,
     private vehicleService: VehicleService,
-    private formBuilder: FormBuilder,
+    private formBuilder: FormBuilder
   ) { }
 
   ngOnInit(): void {
@@ -29,7 +34,7 @@ export class UpdateVehicleComponent implements OnInit {
   buildForm(): void {
     this.updateVehicleForm = this.formBuilder.group({
       id: [null, [Validators.required]],
-      license_plate: ['', [Validators.required, Validators.maxLength(6)]],
+      license_plate: ['', Validators.compose([Validators.required, Validators.maxLength(6), Validators.minLength(5)])],
       vehicle_name: ['', Validators.required],
       vehicle_type: ['car', Validators.required],
       parked: false
@@ -38,7 +43,6 @@ export class UpdateVehicleComponent implements OnInit {
 
   fillForm(id: number) {
     this.vehicleService.getVehicle(id).subscribe((vehicle: Vehicle) => {
-      console.log(vehicle);
       if (vehicle && !vehicle.parked){
         this.updateVehicleForm.patchValue(vehicle);
       } else {
@@ -54,7 +58,7 @@ export class UpdateVehicleComponent implements OnInit {
   }
 
   redirectToList(): void {
-    this.router.navigateByUrl('/vehicle/list-vehicle');
+    this.router.navigate(['list-vehicle'], { relativeTo: this.activatedRoute.parent});
   }
 
 }

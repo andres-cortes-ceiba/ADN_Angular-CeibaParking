@@ -43,7 +43,7 @@ describe('CreateVehicleComponent', () => {
     expect(component.createVehicleForm.value).toEqual({
       license_plate: '',
       vehicle_name: '',
-      vehicle_type: 'car',
+      vehicle_type: '',
       parked: false,
     });
   });

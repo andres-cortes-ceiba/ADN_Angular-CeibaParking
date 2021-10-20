@@ -10,15 +10,16 @@ export class OrderService {
     private http: HttpService,
   ) { }
 
-  createOrder(order: any) {
-    order.start = new Date();
+  createOrder(order: Order) {
+    this.http.doPatch('/vehicle/' + order.vehicle.id, {parked: true}).toPromise();
+    this.http.doPatch('/parking_lot/' + order.parking_lot.id, {available: false}).toPromise();
     return this.http.doPost<Order, boolean>('/order', order);
   }
 
   calcPrice(order: Order) {
-    const hours = Math.ceil((order.end.getTime() - order.start.getTime()) / 3600000);
-    console.log(hours);
-    if (order.start.getDay() === 0 || order.start.getDay() === 6) {
+    const start = new Date(order.start);
+    const hours = Math.ceil((order.end.getTime() - start.getTime()) / 3600000);
+    if (start.getDay() === 0 || start.getDay() === 6) {
       if (order.vehicle.vehicle_type === 'car') {
         return hours * environment.weekendCarHourPrice;
       } else {
@@ -41,39 +42,23 @@ export class OrderService {
     }
   }
 
-  setStart(order: Order) {
-    return this.http.doPatch<{start: Date}, boolean>(
-      '/order/' + order.id,
-      {
-        start: new Date()
-      }
-    );
-  }
-
-  setStatus(order: Order) {
-    this.http.doPatch('/vehicle/' + order.vehicle.id, { parked: false }).toPromise();
-    this.http.doPatch('/parking_lot/' + order.parking_lot.id, { available: true, vehicle: order.vehicle }).toPromise();
-  }
-
-  async clearStatus(order: Order) {
-    await this.http.doPatch('/vehicle/' + order.vehicle.id, { parked: false }).toPromise();
-    await this.http.doPatch('/parking_lot/' + order.parking_lot.id, { available: true, vehicle: null }).toPromise();
-  }
-
   setPrice(order: Order) {
+    const servicePrice = this.calcPrice(order);
     return this.http.doPatch<{price: number}, boolean>(
       '/order/' + order.id,
       {
-        price: this.calcPrice(order)
+        price: servicePrice
       }
     );
   }
 
   endOrder(order: Order) {
+    this.http.doPatch('/vehicle/' + order.vehicle.id, {parked: false}).toPromise();
+    this.http.doPatch('/parking_lot/' + order.parking_lot.id, {available: true}).toPromise();
     return this.http.doPatch<{end: Date}, boolean>(
       '/order/' + order.id,
       {
-        end: new Date()
+        end: order.end
       }
     );
   }

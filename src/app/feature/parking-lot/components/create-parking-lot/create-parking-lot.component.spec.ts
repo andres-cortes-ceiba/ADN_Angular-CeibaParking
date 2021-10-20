@@ -40,8 +40,7 @@ describe('CreateParkingLotComponent', () => {
   it('should create form', () => {
     expect(component.createParkingLotForm.value).toEqual({
       code: '',
-      parking_type: 'car',
-      vehicle: null,
+      parking_type: '',
       available: true
     });
   });

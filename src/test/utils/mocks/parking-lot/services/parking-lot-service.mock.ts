@@ -10,11 +10,8 @@ export class ParkingLotServiceMock {
         }
     }
 
-    getParkingLot(parkingLotId: number) {
-        parkingLotId = 1;
-        if (parkingLotId) {
-            return of(ParkingLotMock);
-        }
+    getParkingLot(_: number) {
+        return of(ParkingLotMock);
     }
 
     getParkingLots() {

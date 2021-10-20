@@ -10,6 +10,11 @@ import { ParkingLotService } from './../../shared/services/parking-lot.service';
 })
 export class CreateParkingLotComponent implements OnInit {
 
+  parkingLotTypeOptions = [
+    'car',
+    'motorcycle'
+  ];
+
   createParkingLotForm: FormGroup;
 
   constructor(
@@ -25,8 +30,7 @@ export class CreateParkingLotComponent implements OnInit {
   buildForm(): void {
     this.createParkingLotForm = this.formBuilder.group({
       code: ['', Validators.required],
-      parking_type: ['car', Validators.required],
-      vehicle: null,
+      parking_type: ['', Validators.required],
       available: true
     });
   }

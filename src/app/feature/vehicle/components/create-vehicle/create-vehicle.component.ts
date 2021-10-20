@@ -10,6 +10,11 @@ import { VehicleService } from './../../shared/services/vehicle.service';
 })
 export class CreateVehicleComponent implements OnInit {
 
+  vehicleTypeOptions = [
+    'car',
+    'motorcycle'
+  ];
+
   createVehicleForm: FormGroup;
 
   constructor(
@@ -24,9 +29,9 @@ export class CreateVehicleComponent implements OnInit {
 
   buildForm(): void {
     this.createVehicleForm = this.formBuilder.group({
-      license_plate: ['', [Validators.required, Validators.maxLength(6)]],
+      license_plate: ['', Validators.compose([Validators.required, Validators.maxLength(6), Validators.minLength(5)])],
       vehicle_name: ['', Validators.required],
-      vehicle_type: ['car', Validators.required],
+      vehicle_type: ['', Validators.required],
       parked: false
     });
   }

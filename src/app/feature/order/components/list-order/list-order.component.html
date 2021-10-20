@@ -1,63 +1,65 @@
-<section class="list-order__button-container">
+<section class="list-order__button-container d-flex justify-content-end my-3">
     <button routerLink="/order/create-order" class="btn btn-success">
         Add order
     </button>
 </section>
 <section class="list-order__table">
-    <table class="table table-dark">
-        <thead>
-            <tr>
-                <th class="col">
-                    ID
-                </th>
-                <th class="col">
-                    Parking lot
-                </th>
-                <th class="col">
-                    Vehicle
-                </th>
-                <th class="col">
-                    Start
-                </th>
-                <th class="col">
-                    End
-                </th>
-                <th class="col">
-                    Price
-                </th>
-                <th class="col">
-                    Actions
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let order of orders$ | async">
-                <th>
-                    {{ order.id }}
-                </th>
-                <th>
-                    {{ order.parking_lot.code }}
-                </th>
-                <th>
-                    {{ order.vehicle.license_plate }}
-                </th>
-                <th>
-                    {{ order.start | date: 'medium' }}
-                </th>
-                <th>
-                    {{ order.end | date: 'medium' }}
-                </th>
-                <th>
-                    {{ order.price }}
-                </th>
-                <th>
-                    <button [disabled]="order.end"
-                        (click)="endService(order)"
-                        class="btn btn-primary">
-                        End service
-                    </button>
-                </th>
-            </tr>
-        </tbody>
-    </table>
+    <section class="table-container">
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th class="col">
+                        ID
+                    </th>
+                    <th class="col">
+                        Parking lot
+                    </th>
+                    <th class="col">
+                        Vehicle
+                    </th>
+                    <th class="col">
+                        Start
+                    </th>
+                    <th class="col">
+                        End
+                    </th>
+                    <th class="col">
+                        Price
+                    </th>
+                    <th class="col">
+                        Actions
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let order of orders$ | async">
+                    <th>
+                        {{ order.id }}
+                    </th>
+                    <th>
+                        {{ order.parking_lot.code }}
+                    </th>
+                    <th>
+                        {{ order.vehicle.license_plate }}
+                    </th>
+                    <th>
+                        {{ order.start | date: 'medium' }}
+                    </th>
+                    <th>
+                        {{ order.end | date: 'medium' }}
+                    </th>
+                    <th>
+                        {{ order.price }}
+                    </th>
+                    <th>
+                        <button [disabled]="order.end"
+                            (click)="endService(order)"
+                            class="btn btn-primary">
+                            End service
+                        </button>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+    </section>
 </section>

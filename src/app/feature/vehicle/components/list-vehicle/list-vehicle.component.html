@@ -1,58 +1,12 @@
-<section class="list-vehicle__button-container">
+<section class="list-vehicle__button-container d-flex justify-content-end my-3">
     <button routerLink="/vehicle/create-vehicle" class="btn btn-success">
         Add vehicle
     </button>
 </section>
-<section class="list-vehicle__table">
-    <table class="table table-dark">
-        <thead>
-            <tr>
-                <th class="col">
-                    ID
-                </th>
-                <th class="col">
-                    License plate
-                </th>
-                <th class="col">
-                    Vehicle name
-                </th>
-                <th class="col">
-                    Vehicle type
-                </th>
-                <th class="col">
-                    Parked
-                </th>
-                <th class="col">
-                    Actions
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let vehicle of vehicles$ | async">
-                <th>
-                    {{ vehicle.id }}
-                </th>
-                <th>
-                    {{ vehicle.license_plate }}
-                </th>
-                <th>
-                    {{ vehicle.vehicle_name }}
-                </th>
-                <th>
-                    {{ vehicle.vehicle_type }}
-                </th>
-                <th>
-                    {{ vehicle.parked }}
-                </th>
-                <th>
-                    <button [routerLink]="['/vehicle/update-vehicle',vehicle.id]"
-                        [disabled]="vehicle.parked"
-                        id="editButton"
-                        class="btn btn-primary">
-                        Edit
-                    </button>
-                </th>
-            </tr>
-        </tbody>
-    </table>
-</section>
+<app-generic-table 
+    [data]="vehicles$"
+    [labels]="labels"
+    [fields]="fields"
+    [action]="action"
+    (selectedItem)="goToEditVehicle($event)"
+></app-generic-table>
