@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Order } from '@core/modelo/order';
 import { ParkingLot } from '@core/modelo/parking-lot';
 import { Vehicle } from '@core/modelo/vehicle';
 import { ParkingLotService } from '@shared/services/parking-lot.service';
@@ -44,10 +45,32 @@ export class CreateOrderComponent implements OnInit {
     });
   }
 
-  createOrder(): void {
-    this.orderService.createOrder(this.createOrderForm.value).subscribe(() => {
+  get vehicle(): Vehicle {
+    return this.createOrderForm.get('vehicle').value;
+  }
+
+  get parkingLot(): ParkingLot {
+    return this.createOrderForm.get('parking_lot').value;
+  }
+
+  get order(): Order {
+    return this.createOrderForm.value;
+  }
+
+  async createOrder() {
+    this.vehicle.parked = true;
+    this.parkingLot.available = false;
+    this.order.start = new Date();
+    this.orderService.createOrder(this.order).subscribe( () => {
       this.redirectToList();
     });
+    // concat(
+    //   this.vehiclesService.editVehicle(this.vehicle),
+    //   this.parkingLotService.editParkingLot(this.parkingLot),
+    //   this.orderService.createOrder(this.order)
+    // ).subscribe( () => {
+    //   this.redirectToList();
+    // });
   }
 
   getVehicles() {

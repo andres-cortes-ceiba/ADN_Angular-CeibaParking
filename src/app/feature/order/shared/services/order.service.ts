@@ -11,8 +11,8 @@ export class OrderService {
   ) { }
 
   createOrder(order: Order) {
-    order.start = new Date();
-    this.setStatus(order);
+    this.http.doPatch('/vehicle/' + order.vehicle.id, order.vehicle).toPromise();
+    this.http.doPatch('/parking_lot/' + order.parking_lot.id, order.parking_lot).toPromise();
     return this.http.doPost<Order, boolean>('/order', order);
   }
 
@@ -42,32 +42,23 @@ export class OrderService {
     }
   }
 
-  setStatus(order: Order) {
-    this.http.doPatch('/vehicle/' + order.vehicle.id, { parked: true }).toPromise();
-    this.http.doPatch('/parking_lot/' + order.parking_lot.id, { available: false }).toPromise();
-  }
-
-  clearStatus(order: Order) {
-    this.http.doPatch('/vehicle/' + order.vehicle.id, { parked: false }).toPromise();
-    this.http.doPatch('/parking_lot/' + order.parking_lot.id, { available: true }).toPromise();
-  }
-
   setPrice(order: Order) {
     return this.http.doPatch<{price: number}, boolean>(
       '/order/' + order.id,
       {
         price: this.calcPrice(order)
       }
-    );
+    ).toPromise();
   }
 
   endOrder(order: Order) {
+    const endOrder = new Date();
     return this.http.doPatch<{end: Date}, boolean>(
       '/order/' + order.id,
       {
-        end: new Date()
+        end: endOrder
       }
-    );
+    ).toPromise();
   }
 
   getOrder(orderId: number) {

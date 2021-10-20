@@ -15,4 +15,8 @@ export class ParkingLotService {
     return this.http.doGet<ParkingLot[]>('/parking_lot?available=true');
   }
 
+  editParkingLot(parkingLot: ParkingLot) {
+    return this.http.doPut<ParkingLot, boolean>('/parking_lot/' + parkingLot.id, parkingLot);
+  }
+
 }
