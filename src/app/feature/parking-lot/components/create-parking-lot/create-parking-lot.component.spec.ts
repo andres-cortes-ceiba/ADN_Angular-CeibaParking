@@ -70,7 +70,7 @@ describe('CreateParkingLotComponent', () => {
   it('should call method createParkingLot and navigate to /parking-lot/list-parking-lot', () => {
 
     const spyCreate = spyOn(parkingLotService, 'createParkingLot').and.callThrough();
-    const spyRedirect = spyOn(component, 'redirectToList').and.callThrough();
+    const spyRedirect = spyOn(component, 'redirectToList').and.callFake(() => {});
 
     component.createParkingLot();
 

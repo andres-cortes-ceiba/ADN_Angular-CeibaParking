@@ -18,7 +18,9 @@ describe('ListOrderComponent', () => {
       imports: [
         SharedModule
       ],
-      providers: [ {provide: OrderService, useClass: OrderServiceMock}]
+      providers: [
+        {provide: OrderService, useClass: OrderServiceMock},
+      ]
     })
     .compileComponents();
   });

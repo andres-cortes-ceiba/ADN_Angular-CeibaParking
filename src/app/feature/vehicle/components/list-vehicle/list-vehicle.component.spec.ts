@@ -1,3 +1,4 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Vehicle } from '@core/modelo/vehicle';
@@ -16,7 +17,10 @@ describe('ListVehicleComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ ListVehicleComponent ],
       imports: [ RouterTestingModule ],
-      providers: [ {provide: VehicleService, useClass: VehicleServiceMock}]
+      providers: [ {provide: VehicleService, useClass: VehicleServiceMock}],
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA
+      ]
     })
     .compileComponents();
   });

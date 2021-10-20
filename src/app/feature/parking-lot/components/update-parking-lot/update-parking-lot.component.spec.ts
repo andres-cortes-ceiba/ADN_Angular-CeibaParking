@@ -68,7 +68,7 @@ describe('UpdateParkingLotComponent', () => {
   it('should call method updateParkingLot and navigate to /vehicle/list-vehicle', () => {
 
     const spyCreate = spyOn(parkingLotService, 'updateParkingLot').and.callThrough();
-    const spyRedirect = spyOn(component, 'redirectToList').and.callThrough();
+    const spyRedirect = spyOn(component, 'redirectToList').and.callFake(() => {});
 
     component.updateParkingLot();
 
@@ -79,7 +79,7 @@ describe('UpdateParkingLotComponent', () => {
 
   it('should redirect to /parking-lot/list-parking-lot if can not find the parking lot', () => {
 
-    const spyRedirect = spyOn(component, 'redirectToList').and.callThrough();
+    const spyRedirect = spyOn(component, 'redirectToList').and.callFake(() => {});
 
     let spyGetParkingLot = spyOn(parkingLotService, 'getParkingLot').and.returnValue(of(ParkingLotMock));
 

@@ -120,7 +120,7 @@ describe('CreateOrderComponent', () => {
   it('should call method createOrder and navigate to /order/list-order', () => {
 
     const spyCreate = spyOn(orderService, 'createOrder').and.callThrough();
-    const spyRedirect = spyOn(component, 'redirectToList').and.callThrough();
+    const spyRedirect = spyOn(component, 'redirectToList').and.callFake(() => {});
 
     component.createOrderForm.patchValue(OrderMock);
     component.createOrder();

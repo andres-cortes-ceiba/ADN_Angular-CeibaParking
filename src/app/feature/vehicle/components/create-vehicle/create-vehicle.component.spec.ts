@@ -83,7 +83,7 @@ describe('CreateVehicleComponent', () => {
   it('should call method createVehicle and navigate to /vehicle/list-vehicle', () => {
 
     const spyCreate = spyOn(vehicleService, 'createVehicle').and.callThrough();
-    const spyRedirect = spyOn(component, 'redirectToList').and.callThrough();
+    const spyRedirect = spyOn(component, 'redirectToList').and.callFake(() => {});
 
     component.createVehicle();
 
