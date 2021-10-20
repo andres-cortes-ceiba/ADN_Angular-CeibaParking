@@ -22,7 +22,7 @@ export class VehicleService {
     return this.http.doGet<Vehicle[]>('/vehicle');
   }
 
-  updateVehicle(vehicle: any) {
+  updateVehicle(vehicle: Vehicle) {
     return this.http.doPut<Vehicle, boolean>('/vehicle/' + vehicle.id, vehicle);
   }
 
