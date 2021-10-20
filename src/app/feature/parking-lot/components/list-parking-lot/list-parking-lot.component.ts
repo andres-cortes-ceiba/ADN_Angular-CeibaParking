@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ParkingLot } from '@core/modelo/parking-lot';
 import { ParkingLotService } from './../../shared/services/parking-lot.service';
 import { Observable } from 'rxjs';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-parking-lot',
@@ -31,7 +31,8 @@ export class ListParkingLotComponent implements OnInit {
 
   constructor(
     private parkingLotService: ParkingLotService,
-    private router: Router
+    private router: Router,
+    private activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
@@ -43,7 +44,7 @@ export class ListParkingLotComponent implements OnInit {
   }
 
   goToEditParkingLot(parkingLotId: number) {
-    this.router.navigateByUrl(`/parking-lot/update-parking-lot/${parkingLotId}`);
+    this.router.navigate(['update-parking-lot/' + parkingLotId], {relativeTo: this.activatedRoute.parent});
   }
 
 }

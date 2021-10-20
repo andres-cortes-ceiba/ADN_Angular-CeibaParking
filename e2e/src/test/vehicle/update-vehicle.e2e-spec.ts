@@ -2,14 +2,14 @@ import { AppPage } from './../../app.po';
 import { browser } from 'protractor';
 import { UpdateVehiclePage } from './../../page/vehicle/update-vehicle.po';
 
-describe('workspace-project Update vehicle', () => {
+fdescribe('workspace-project Update vehicle', () => {
     let page: AppPage;
     let vehicle: UpdateVehiclePage;
 
     beforeEach( async () => {
         page = new AppPage();
         vehicle = new UpdateVehiclePage();
-        page.navigateTo('/vehicle/update-vehicle');
+        page.navigateTo('vehicle/update-vehicle/1');
     });
 
     it('should see error "* License plate is required"', () => {
@@ -40,11 +40,12 @@ describe('workspace-project Update vehicle', () => {
         expect(vehicle.getRequiredVehicleTypeError()).toEqual('* Vehicle type is required');
     });
 
-    it('should create vehicle', () => {
+    fit('should update vehicle', () => {
         vehicle.inputLicensePlate('ABC123');
         vehicle.inputVehicleName('mazda 3');
         vehicle.clickVehicleTypeSelect();
         vehicle.selectVehicleType('car');
         vehicle.clickupdateVehicleButton();
+        expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + 'vehicle/list-vehicle');
     });
 });

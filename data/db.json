@@ -29,15 +29,63 @@
       "parking_type": "car",
       "available": true,
       "id": 5
+    },
+    {
+      "code": "B22",
+      "parking_type": "car",
+      "available": true,
+      "id": 6
+    },
+    {
+      "code": "B22",
+      "parking_type": "car",
+      "available": true,
+      "id": 7
+    },
+    {
+      "code": "B22",
+      "parking_type": "car",
+      "available": true,
+      "id": 8
+    },
+    {
+      "code": "B22",
+      "parking_type": "car",
+      "available": true,
+      "id": 9
+    },
+    {
+      "code": "B22",
+      "parking_type": "car",
+      "available": true,
+      "id": 10
+    },
+    {
+      "code": "B22",
+      "parking_type": "car",
+      "available": true,
+      "id": 11
+    },
+    {
+      "code": "B22",
+      "parking_type": "car",
+      "available": true,
+      "id": 12
+    },
+    {
+      "code": "B22",
+      "parking_type": "car",
+      "available": true,
+      "id": 13
     }
   ],
   "vehicle": [
     {
+      "id": 1,
       "license_plate": "AB33DC",
       "vehicle_name": "name",
       "vehicle_type": "car",
-      "parked": false,
-      "id": 1
+      "parked": false
     },
     {
       "license_plate": "AB33DC",

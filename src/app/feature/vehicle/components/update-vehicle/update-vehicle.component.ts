@@ -22,7 +22,7 @@ export class UpdateVehicleComponent implements OnInit {
     private readonly router: Router,
     private readonly activatedRoute: ActivatedRoute,
     private vehicleService: VehicleService,
-    private formBuilder: FormBuilder,
+    private formBuilder: FormBuilder
   ) { }
 
   ngOnInit(): void {
@@ -58,7 +58,7 @@ export class UpdateVehicleComponent implements OnInit {
   }
 
   redirectToList(): void {
-    this.router.navigateByUrl('/vehicle/list-vehicle');
+    this.router.navigate(['list-vehicle'], { relativeTo: this.activatedRoute.parent});
   }
 
 }

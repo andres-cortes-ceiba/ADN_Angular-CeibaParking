@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Vehicle } from '@core/modelo/vehicle';
 import { VehicleService } from './../../shared/services/vehicle.service';
 import { Observable } from 'rxjs';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-vehicle',
@@ -33,7 +33,8 @@ export class ListVehicleComponent implements OnInit {
 
   constructor(
     private vehicleService: VehicleService,
-    private router: Router
+    private router: Router,
+    private activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
@@ -45,7 +46,7 @@ export class ListVehicleComponent implements OnInit {
   }
 
   goToEditVehicle(vehicleId: number) {
-    this.router.navigateByUrl(`/vehicle/update-vehicle/${vehicleId}`);
+    this.router.navigate(['update-vehicle/' + vehicleId], {relativeTo: this.activatedRoute.parent});
   }
 
 }
