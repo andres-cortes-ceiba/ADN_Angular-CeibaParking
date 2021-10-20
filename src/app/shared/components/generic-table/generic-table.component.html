@@ -1,29 +1,31 @@
 <section class="generic-table">
-    <table class="table table-dark">
-        <thead>
-            <tr class="generic-table__row">
-                <th *ngFor="let label of labels"
-                    class="col" >
-                    {{label}}
-                </th>
-                <th>
-                    Actions
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="generic-table__row" *ngFor="let item of data | async; trackBy: trackByFn">
-                <th *ngFor="let field of fields">
-                    {{ item[field] }}
-                </th>
-                <th>
-                    <button (click)="emitItemEvent(item.id)"
-                        [id]="'generic-table__action-button--item-' + item.id"
-                        class="btn btn-primary">
-                        {{ action }}
-                    </button>
-                </th>
-            </tr>
-        </tbody>
-    </table>
+    <section class="table-container">
+        <table class="table table-dark">
+            <thead>
+                <tr class="generic-table__row">
+                    <th *ngFor="let label of labels"
+                        class="col" >
+                        {{label}}
+                    </th>
+                    <th>
+                        Actions
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="generic-table__row" *ngFor="let item of data | async; trackBy: trackByFn">
+                    <th *ngFor="let field of fields">
+                        {{ item[field] }}
+                    </th>
+                    <th>
+                        <button (click)="emitItemEvent(item.id)"
+                            [id]="'generic-table__action-button--item-' + item.id"
+                            class="btn btn-primary">
+                            {{ action }}
+                        </button>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+    </section>
 </section>

@@ -6,16 +6,36 @@
                     <label for="update-vehicle__license-plate">license plate</label>
                     <input formControlName="license_plate" type="text" class="form-control" id="update-vehicle__license-plate"
                         aria-describedby="license_plate" placeholder="Enter license plate">
-                        <div *ngIf="updateVehicleForm.get('license_plate').errors?.required" id="update-vehicle__error-license-plate-required">* License plate is required</div>
-                    <div *ngIf="updateVehicleForm.get('license_plate').errors?.maxlength" id="update-vehicle__error--license-plate-max-length">* License plate can be max 6 characters long</div>
-                    <div *ngIf="updateVehicleForm.get('license_plate').errors?.minlength" id="update-vehicle__error--license-plate-min-length">* License plate can be min 5 characters long</div>
+                    <div
+                        *ngIf="updateVehicleForm.get('license_plate').errors?.required"
+                        class="error-message"
+                        id="update-vehicle__error-license-plate-required">
+                        * License plate is required
+                    </div>
+                    <div 
+                        *ngIf="updateVehicleForm.get('license_plate').errors?.maxlength"
+                        class="error-message"
+                        id="update-vehicle__error--license-plate-max-length">
+                        * License plate can be max 6 characters long
+                    </div>
+                    <div
+                        *ngIf="updateVehicleForm.get('license_plate').errors?.minlength"
+                        class="error-message"
+                        id="update-vehicle__error--license-plate-min-length">
+                        * License plate can be min 5 characters long
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="update-vehicle__vehicle-name">Vehicle name</label>
                     <input formControlName="vehicle_name" type="text" class="form-control" id="update-vehicle__vehicle-name"
                         aria-describedby="vehicle_name" placeholder="Enter license plate">
-                        <div *ngIf="updateVehicleForm.get('vehicle_name').errors?.required" id="update-vehicle__error--vehicle-name-required">* Vehicle name is required</div>
+                    <div
+                        *ngIf="updateVehicleForm.get('vehicle_name').errors?.required"
+                        class="error-message"
+                        id="update-vehicle__error--vehicle-name-required">
+                        * Vehicle name is required
                     </div>
+                </div>
                 <div class="form-group">
                     <label for="update-vehicle__vehicle-type">Vehicle type</label>
                     <select formControlName="vehicle_type" class="form-select" id="update-vehicle__vehicle-type">
@@ -27,7 +47,12 @@
                             {{option}}
                         </option>
                     </select>
-                    <div *ngIf="updateVehicleForm.get('vehicle_type').errors?.required" id="update-vehicle__error--vehicle-type-required">* Vehicle type is required</div>
+                    <div
+                        *ngIf="updateVehicleForm.get('vehicle_type').errors?.required"
+                        class="error-message"
+                        id="update-vehicle__error--vehicle-type-required">
+                        * Vehicle type is required
+                    </div>
                 </div>
                 <div>
                     <button [disabled]="updateVehicleForm.invalid"

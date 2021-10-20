@@ -18,7 +18,12 @@
                             {{option}}
                         </option>
                     </select>
-                    <div *ngIf="vehicleType===''" id="create-order__error-order-type-required">* Select an order type</div>
+                    <div 
+                        *ngIf="vehicleType===''"
+                        class="error-message"
+                        id="create-order__error-order-type-required">
+                        * Select an order type
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="create-order__parking-lot">Parking lot</label>
@@ -31,7 +36,12 @@
                             {{ parking_lot.code }}
                         </option>
                     </select>
-                    <div *ngIf="createOrderForm.get('parking_lot').errors?.required" id="create-order__error-parking-lot-required">* Parking lot is required</div>
+                    <div 
+                        *ngIf="createOrderForm.get('parking_lot').errors?.required"
+                        class="error-message"
+                        id="create-order__error-parking-lot-required">
+                        * Parking lot is required
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="create-order__vehicle">Vehicle</label>
@@ -44,16 +54,23 @@
                             {{ vehicle.license_plate }}
                         </option>
                     </select>
-                    <div *ngIf="createOrderForm.get('vehicle').errors?.required" id="create-order__error-vehicle-required">* Vehicle is required</div>
+                    <div 
+                        *ngIf="createOrderForm.get('vehicle').errors?.required"
+                        class="error-message"
+                        id="create-order__error-vehicle-required">
+                        * Vehicle is required
+                    </div>
                 </div>
-                <button 
-                    [disabled]="createOrderForm.invalid"
-                    (click)="createOrder()"
-                    id="create-order__btn-create"
-                    type="button"
-                    class="btn btn-success">
-                Create order
-                </button>
+                <div class="save-button__container">
+                    <button 
+                        [disabled]="createOrderForm.invalid"
+                        (click)="createOrder()"
+                        id="create-order__btn-create"
+                        type="button"
+                        class="btn btn-success">
+                    Create order
+                    </button>
+                </div>
             </form>
         </section>
     </div>

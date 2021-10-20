@@ -6,7 +6,12 @@
                     <label for="update-parking-lot__code">Code</label>
                     <input formControlName="code" type="text" class="form-control" id="update-parking-lot__code" aria-describedby="code"
                         placeholder="Enter code">
-                    <div *ngIf="updateParkingLotForm.get('code').errors?.required" id="update-parking-lot__error-code-required">* Code is required</div>
+                    <div 
+                        *ngIf="updateParkingLotForm.get('code').errors?.required"
+                        class="error-message"
+                        id="update-parking-lot__error-code-required">
+                        * Code is required
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="update-parking-lot__parking-type">Parking Type</label>
@@ -19,7 +24,12 @@
                             {{option}}
                         </option>
                     </select>
-                    <div *ngIf="updateParkingLotForm.get('parking_type').errors?.required" id="update-parking-lot__error-parking-type-required">* Parking type is required</div>
+                    <div
+                        *ngIf="updateParkingLotForm.get('parking_type').errors?.required"
+                        class="error-message"
+                        id="update-parking-lot__error-parking-type-required">
+                        * Parking type is required
+                    </div>
                 </div>
                 <div>
                     <button [disabled]="updateParkingLotForm.invalid"
