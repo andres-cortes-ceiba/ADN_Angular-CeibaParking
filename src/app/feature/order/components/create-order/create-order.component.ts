@@ -85,7 +85,7 @@ export class CreateOrderComponent implements OnInit {
   }
 
   redirectToList(): void {
-    this.router.navigate(['/list-order'], {relativeTo: this.activatedRoute});
+    this.router.navigate(['list-order'], {relativeTo: this.activatedRoute});
   }
 
 }

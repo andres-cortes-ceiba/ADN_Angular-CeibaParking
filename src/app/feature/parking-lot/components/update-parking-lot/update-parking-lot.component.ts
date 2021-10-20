@@ -57,7 +57,7 @@ export class UpdateParkingLotComponent implements OnInit {
   }
 
   redirectToList(): void {
-    this.router.navigate(['/list-parking-lot'], {relativeTo: this.activatedRoute.parent});
+    this.router.navigate(['list-parking-lot'], {relativeTo: this.activatedRoute.parent});
   }
 
 }

@@ -44,7 +44,7 @@ export class CreateVehicleComponent implements OnInit {
   }
 
   redirectToList(): void {
-    this.router.navigate(['/list-vehicle'], {relativeTo: this.activatedRoute.parent});
+    this.router.navigate(['list-vehicle'], {relativeTo: this.activatedRoute.parent});
   }
 
 }
