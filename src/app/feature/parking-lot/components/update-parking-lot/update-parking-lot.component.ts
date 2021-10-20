@@ -11,6 +11,11 @@ import { ParkingLotService } from '../../shared/services/parking-lot.service';
 })
 export class UpdateParkingLotComponent implements OnInit {
 
+  parkingLotTypeOptions = [
+    'car',
+    'motorcycle'
+  ];
+
   updateParkingLotForm: FormGroup;
 
   constructor(

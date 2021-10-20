@@ -3,24 +3,28 @@
         <section>
             <form [formGroup]="createParkingLotForm">
                 <div class="form-group">
-                    <label for="code">Code</label>
-                    <input formControlName="code" type="text" class="form-control" id="code" aria-describedby="code"
+                    <label for="create-parking-lot__code">Code</label>
+                    <input formControlName="code" type="text" class="form-control" id="create-parking-lot__code" aria-describedby="code"
                         placeholder="Enter code">
+                    <div *ngIf="createParkingLotForm.get('code').errors?.required" id="create-parking-lot__error-code-required">* Code is required</div>
                 </div>
                 <div class="form-group">
-                    <label for="parkingType">Parking Type</label>
-                    <select formControlName="parking_type" class="form-select" id="parkingType">
-                        <option value="car">
-                            car
-                        </option>
-                        <option value="motorcycle">
-                            motorcycle
+                    <label for="create-parking-lot__parking-type">Parking Type</label>
+                    <select formControlName="parking_type" class="form-select" id="create-parking-lot__parking-type">
+                        <option value="" selected>Select</option>
+                        <option 
+                            [id]="'create-parking-lot__parking-type-option--' + option"
+                            *ngFor="let option of parkingLotTypeOptions" 
+                            [ngValue]="option">
+                            {{option}}
                         </option>
                     </select>
+                    <div *ngIf="createParkingLotForm.get('parking_type').errors?.required" id="create-parking-lot__error-parking-type-required">* Parking type is required</div>
                 </div>
                 <div>
                     <button [disabled]="createParkingLotForm.invalid"
                         (click)="createParkingLot()"
+                        id="create-parking-lot__btn-create"
                         class="btn btn-success">
                         Create parking lot
                     </button>

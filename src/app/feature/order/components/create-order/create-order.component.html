@@ -3,40 +3,53 @@
         <section>
             <form [formGroup]="createOrderForm">
                 <div class="form-group">
-                    <label for="vehicle_type">Vehicle type</label>
+                    <label for="create-order__order-type">Order type</label>
                     <select  [(ngModel)]="vehicleType"
                         [ngModelOptions]="{standalone: true}"
                         class="form-select"
-                        id="vehicle_type">
+                        id="create-order__order-type">
                         <option value="" selected>
                             Select
                         </option>
-                        <option value="car">
-                            car
-                        </option>
-                        <option value="motorcycle">
-                            motorcycle
+                        <option 
+                            *ngFor="let option of orderTypeOptions" 
+                            [id]="'create-order__order-type-option--' + option"
+                            [ngValue]="option">
+                            {{option}}
                         </option>
                     </select>
+                    <div *ngIf="vehicleType===''" id="create-order__error-order-type-required">* Select an order type</div>
                 </div>
                 <div class="form-group">
-                    <label for="parking_lot">Parking lot</label>
-                    <select formControlName="parking_lot" class="form-select" id="parking_lot">
-                        <option *ngFor="let parking_lot of parkingLotsData$ | async | filterParkingLotByType: vehicleType" [ngValue]="parking_lot">
+                    <label for="create-order__parking-lot">Parking lot</label>
+                    <select formControlName="parking_lot" class="form-select" id="create-order__parking-lot">
+                        <option value="" selected>Select</option>
+                        <option
+                            *ngFor="let parking_lot of parkingLotsData$ | async | filterParkingLotByType: vehicleType"
+                            [id]="'create-order__parking-lot-option--' + parking_lot"
+                            [ngValue]="parking_lot">
                             {{ parking_lot.code }}
                         </option>
                     </select>
+                    <div *ngIf="createOrderForm.get('parking_lot').errors?.required" id="create-order__error-parking-lot-required">* Parking lot is required</div>
                 </div>
                 <div class="form-group">
-                    <label for="vehicle">Vehicle</label>
-                    <select formControlName="vehicle" class="form-select" id="vehicle">
-                        <option *ngFor="let vehicle of vehiclesData$ | async | filterVehicleByType: vehicleType" [ngValue]="vehicle">
+                    <label for="create-order__vehicle">Vehicle</label>
+                    <select formControlName="vehicle" class="form-select" id="create-order__vehicle">
+                        <option value="" selected>Select</option>
+                        <option 
+                            *ngFor="let vehicle of vehiclesData$ | async | filterVehicleByType: vehicleType"
+                            [id]="'create-order__vehicle-option--' + vehicle"
+                            [ngValue]="vehicle">
                             {{ vehicle.license_plate }}
                         </option>
                     </select>
+                    <div *ngIf="createOrderForm.get('vehicle').errors?.required" id="create-order__error-vehicle-required">* Vehicle is required</div>
                 </div>
-                <button [disabled]="createOrderForm.invalid"
+                <button 
+                    [disabled]="createOrderForm.invalid"
                     (click)="createOrder()"
+                    id="create-order__btn-create"
                     type="button"
                     class="btn btn-success">
                 Create order

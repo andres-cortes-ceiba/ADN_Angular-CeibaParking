@@ -16,6 +16,11 @@ import { OrderService } from '../../shared/services/order.service';
 })
 export class CreateOrderComponent implements OnInit {
 
+  orderTypeOptions = [
+    'car',
+    'motorcycle'
+  ];
+
   createOrderForm: FormGroup;
   vehiclesData$: Observable<Vehicle[]>;
   parkingLotsData$: Observable<ParkingLot[]>;
@@ -55,6 +60,10 @@ export class CreateOrderComponent implements OnInit {
 
   get order(): Order {
     return this.createOrderForm.value;
+  }
+
+  get orderType() {
+    return this.orderType;
   }
 
   createOrder() {

@@ -10,11 +10,8 @@ export class OrderServiceMock {
         }
     }
 
-    getOrder(orderId: number) {
-        orderId = 1;
-        if (orderId) {
-            return of(OrderMock);
-        }
+    getOrder(_: number) {
+        return of(OrderMock);
     }
 
     getOrders() {

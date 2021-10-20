@@ -11,6 +11,24 @@
       "code": "D45",
       "parking_type": "motorcycle",
       "available": true
+    },
+    {
+      "code": "B22",
+      "parking_type": "car",
+      "available": true,
+      "id": 3
+    },
+    {
+      "code": "B22",
+      "parking_type": "car",
+      "available": true,
+      "id": 4
+    },
+    {
+      "code": "B22",
+      "parking_type": "car",
+      "available": true,
+      "id": 5
     }
   ],
   "vehicle": [
@@ -27,6 +45,13 @@
       "vehicle_type": "motorcycle",
       "parked": false,
       "id": 2
+    },
+    {
+      "license_plate": "abcde",
+      "vehicle_name": "asdasd",
+      "vehicle_type": "car",
+      "parked": false,
+      "id": 3
     }
   ],
   "order": [
