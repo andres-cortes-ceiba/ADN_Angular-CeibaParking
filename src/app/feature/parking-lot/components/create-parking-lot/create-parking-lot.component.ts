@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ParkingLotService } from './../../shared/services/parking-lot.service';
 
 @Component({
@@ -21,6 +21,7 @@ export class CreateParkingLotComponent implements OnInit {
     private readonly router: Router,
     private parkingLotService: ParkingLotService,
     private formBuilder: FormBuilder,
+    private activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
@@ -42,7 +43,7 @@ export class CreateParkingLotComponent implements OnInit {
   }
 
   redirectToList(): void {
-    this.router.navigateByUrl('/parking-lot/list-parking-lot');
+    this.router.navigate(['/list-parking-lot'], {relativeTo: this.activatedRoute});
   }
 
 }

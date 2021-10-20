@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { VehicleService } from './../../shared/services/vehicle.service';
 
 @Component({
@@ -21,6 +21,7 @@ export class CreateVehicleComponent implements OnInit {
     private readonly router: Router,
     private vehicleService: VehicleService,
     private formBuilder: FormBuilder,
+    private activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
@@ -43,7 +44,7 @@ export class CreateVehicleComponent implements OnInit {
   }
 
   redirectToList(): void {
-    this.router.navigateByUrl('/vehicle/list-vehicle');
+    this.router.navigate(['/list-vehicle'], {relativeTo: this.activatedRoute.parent});
   }
 
 }

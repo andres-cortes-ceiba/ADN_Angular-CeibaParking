@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Order } from '@core/modelo/order';
 import { ParkingLot } from '@core/modelo/parking-lot';
 import { Vehicle } from '@core/modelo/vehicle';
@@ -31,7 +31,8 @@ export class CreateOrderComponent implements OnInit {
     private orderService: OrderService,
     private formBuilder: FormBuilder,
     private vehiclesService: VehicleService,
-    private parkingLotService: ParkingLotService
+    private parkingLotService: ParkingLotService,
+    private activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
@@ -84,7 +85,7 @@ export class CreateOrderComponent implements OnInit {
   }
 
   redirectToList(): void {
-    this.router.navigateByUrl('/order/list-order');
+    this.router.navigate(['/list-order'], {relativeTo: this.activatedRoute});
   }
 
 }
