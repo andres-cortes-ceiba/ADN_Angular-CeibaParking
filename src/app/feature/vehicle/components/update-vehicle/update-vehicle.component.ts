@@ -38,7 +38,6 @@ export class UpdateVehicleComponent implements OnInit {
 
   fillForm(id: number) {
     this.vehicleService.getVehicle(id).subscribe((vehicle: Vehicle) => {
-      console.log(vehicle);
       if (vehicle && !vehicle.parked){
         this.updateVehicleForm.patchValue(vehicle);
       } else {

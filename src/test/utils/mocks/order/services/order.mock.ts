@@ -4,13 +4,6 @@ export const OrderMock = {
         id: 1,
         code: 'A22',
         parking_type: 'motorcycle',
-        vehicle: {
-            id: 1,
-            license_plate: 'OQJ17B',
-            vehicle_name: 'YBR125',
-            vehicle_type: 'motorcycle',
-            parked: true
-        },
         available: false
     },
     vehicle: {
@@ -32,13 +25,6 @@ export const OrderArrayMock = [
             id: 1,
             code: 'A22',
             parking_type: 'motorcycle',
-            vehicle: {
-                id: 1,
-                license_plate: 'OQJ17B',
-                vehicle_name: 'YBR125',
-                vehicle_type: 'motorcycle',
-                parked: true
-            },
             available: false
         },
         vehicle: {
@@ -58,13 +44,6 @@ export const OrderArrayMock = [
             id: 2,
             code: 'B12',
             parking_type: 'car',
-            vehicle: {
-                id: 2,
-                license_plate: 'MVT745',
-                vehicle_name: 'Mazda 3',
-                vehicle_type: 'car',
-                parked: true
-            },
             available: true
         },
         vehicle: {
@@ -85,13 +64,6 @@ export const carOrderOnWeekendMock = {
     parking_lot: {
       code: 'A34',
       parking_type: 'car',
-      vehicle: {
-        license_plate: 'AGF345',
-        vehicle_name: 'name',
-        vehicle_type: 'car',
-        parked: true,
-        id: 7
-      },
       available: false,
       id: 7
     },
@@ -112,13 +84,6 @@ export const motorcycleOrderOnWeekendMock = {
     parking_lot: {
       code: 'A34',
       parking_type: 'motorcycle',
-      vehicle: {
-        license_plate: 'AGF345',
-        vehicle_name: 'name',
-        vehicle_type: 'motorcycle',
-        parked: true,
-        id: 7
-      },
       available: false,
       id: 7
     },
@@ -139,13 +104,6 @@ export const carOrderOnWeekMock = {
     parking_lot: {
       code: 'A34',
       parking_type: 'car',
-      vehicle: {
-        license_plate: 'AGF345',
-        vehicle_name: 'name',
-        vehicle_type: 'car',
-        parked: true,
-        id: 7
-      },
       available: false,
       id: 7
     },
@@ -166,13 +124,6 @@ export const motorcycleOrderOnWeekMock = {
     parking_lot: {
       code: 'A34',
       parking_type: 'motorcycle',
-      vehicle: {
-        license_plate: 'AGF345',
-        vehicle_name: 'name',
-        vehicle_type: 'motorcycle',
-        parked: true,
-        id: 7
-      },
       available: false,
       id: 7
     },
@@ -193,13 +144,6 @@ export const carOrderDayOnWeekMock = {
     parking_lot: {
       code: 'A34',
       parking_type: 'car',
-      vehicle: {
-        license_plate: 'AGF345',
-        vehicle_name: 'name',
-        vehicle_type: 'car',
-        parked: true,
-        id: 7
-      },
       available: false,
       id: 7
     },
@@ -220,13 +164,6 @@ export const motorcycleDayOrderOnWeekMock = {
     parking_lot: {
       code: 'A34',
       parking_type: 'motorcycle',
-      vehicle: {
-        license_plate: 'AGF345',
-        vehicle_name: 'name',
-        vehicle_type: 'motorcycle',
-        parked: true,
-        id: 7
-      },
       available: false,
       id: 7
     },

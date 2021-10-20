@@ -7,12 +7,14 @@ import { VehicleService } from './services/vehicle.service';
 import { ParkingLotService } from './services/parking-lot.service';
 import { FilterVehicleByTypePipe } from './pipe/filter-vehicle-by-type/filter-vehicle-by-type.pipe';
 import { FilterParkingLotByTypePipe } from './pipe/filter-parking-lot-by-type/filter-parking-lot-by-type.pipe';
+import { GenericTableComponent } from './components/generic-table/generic-table.component';
 
 @NgModule({
   declarations: [
     TrackByPipe,
     FilterVehicleByTypePipe,
-    FilterParkingLotByTypePipe
+    FilterParkingLotByTypePipe,
+    GenericTableComponent
   ],
   imports: [
     CommonModule,
@@ -30,7 +32,8 @@ import { FilterParkingLotByTypePipe } from './pipe/filter-parking-lot-by-type/fi
     FormsModule,
     TrackByPipe,
     FilterVehicleByTypePipe,
-    FilterParkingLotByTypePipe
+    FilterParkingLotByTypePipe,
+    GenericTableComponent
   ]
 })
 export class SharedModule { }

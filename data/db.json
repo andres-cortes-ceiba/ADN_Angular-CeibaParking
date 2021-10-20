@@ -1,9 +1,129 @@
 {
   "parking_lot": [
-    
+    {
+      "code": "D45",
+      "parking_type": "car",
+      "available": true,
+      "id": 1
+    },
+    {
+      "id": 2,
+      "code": "D45",
+      "parking_type": "motorcycle",
+      "available": true
+    }
   ],
-  "vehicle": [],
+  "vehicle": [
+    {
+      "license_plate": "AB33DC",
+      "vehicle_name": "name",
+      "vehicle_type": "car",
+      "parked": false,
+      "id": 1
+    },
+    {
+      "license_plate": "AB33DC",
+      "vehicle_name": "name",
+      "vehicle_type": "motorcycle",
+      "parked": false,
+      "id": 2
+    }
+  ],
   "order": [
-    
+    {
+      "parking_lot": {
+        "code": "D45",
+        "parking_type": "car",
+        "available": false,
+        "id": 1
+      },
+      "vehicle": {
+        "license_plate": "AB33DC",
+        "vehicle_name": "name",
+        "vehicle_type": "car",
+        "parked": true,
+        "id": 1
+      },
+      "start": "2021-10-20T05:49:16.139Z",
+      "end": "2021-10-20T05:50:04.446Z",
+      "price": 3000,
+      "id": 1
+    },
+    {
+      "parking_lot": {
+        "id": 2,
+        "code": "D45",
+        "parking_type": "motorcycle",
+        "available": false
+      },
+      "vehicle": {
+        "license_plate": "AB33DC",
+        "vehicle_name": "name",
+        "vehicle_type": "motorcycle",
+        "parked": true,
+        "id": 2
+      },
+      "start": "2021-10-20T05:51:38.388Z",
+      "end": "2021-10-20T05:52:02.547Z",
+      "price": 1500,
+      "id": 2
+    },
+    {
+      "parking_lot": {
+        "code": "D45",
+        "parking_type": "car",
+        "available": false,
+        "id": 1
+      },
+      "vehicle": {
+        "license_plate": "AB33DC",
+        "vehicle_name": "name",
+        "vehicle_type": "car",
+        "parked": true,
+        "id": 1
+      },
+      "start": "2021-10-20T05:53:03.824Z",
+      "end": "2021-10-20T05:53:59.536Z",
+      "price": 3000,
+      "id": 3
+    },
+    {
+      "parking_lot": {
+        "code": "D45",
+        "parking_type": "car",
+        "available": false,
+        "id": 1
+      },
+      "vehicle": {
+        "license_plate": "AB33DC",
+        "vehicle_name": "name",
+        "vehicle_type": "car",
+        "parked": true,
+        "id": 1
+      },
+      "start": "2021-10-20T06:00:20.729Z",
+      "end": "2021-10-20T06:00:23.999Z",
+      "price": 3000,
+      "id": 4
+    },
+    {
+      "parking_lot": {
+        "code": "D45",
+        "parking_type": "car",
+        "available": false,
+        "id": 1
+      },
+      "vehicle": {
+        "license_plate": "AB33DC",
+        "vehicle_name": "name",
+        "vehicle_type": "car",
+        "parked": true,
+        "id": 1
+      },
+      "start": "2021-10-20T10:07:44.093Z",
+      "end": "2021-10-20T10:20:13.646Z",
+      "price": 3000,
+      "id": 5
+    }
   ]
 }

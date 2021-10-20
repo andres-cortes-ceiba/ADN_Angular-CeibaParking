@@ -113,7 +113,6 @@ describe('CreateOrderComponent', () => {
   it('should return true when form is valid', () => {
 
     component.createOrderForm.patchValue(OrderMock);
-    component.createOrderForm.patchValue({start: new Date()});
     expect(component.createOrderForm.valid).toBeTruthy();
 
   });
@@ -123,6 +122,7 @@ describe('CreateOrderComponent', () => {
     const spyCreate = spyOn(orderService, 'createOrder').and.callThrough();
     const spyRedirect = spyOn(component, 'redirectToList').and.callThrough();
 
+    component.createOrderForm.patchValue(OrderMock);
     component.createOrder();
 
     expect(spyCreate).toHaveBeenCalled();

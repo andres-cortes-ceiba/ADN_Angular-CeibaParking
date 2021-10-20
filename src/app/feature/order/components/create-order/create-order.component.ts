@@ -57,20 +57,13 @@ export class CreateOrderComponent implements OnInit {
     return this.createOrderForm.value;
   }
 
-  async createOrder() {
+  createOrder() {
     this.vehicle.parked = true;
     this.parkingLot.available = false;
     this.order.start = new Date();
     this.orderService.createOrder(this.order).subscribe( () => {
       this.redirectToList();
     });
-    // concat(
-    //   this.vehiclesService.editVehicle(this.vehicle),
-    //   this.parkingLotService.editParkingLot(this.parkingLot),
-    //   this.orderService.createOrder(this.order)
-    // ).subscribe( () => {
-    //   this.redirectToList();
-    // });
   }
 
   getVehicles() {
